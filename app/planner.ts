@@ -1,6 +1,6 @@
 import seed from './products.json';
-export type Product=(typeof seed)[number];
-export const initialProducts=seed;
+export type Product={id:string;name:string;uuid:string;title:string;image:string;packAmount:number;packLabel:string;kcal:number;p:number;c:number;f:number;category:string;vegan:boolean;allergens:string[];unit:string;offers:{store:string;price:number;updated:string}[];source:string};
+export const initialProducts=seed as Product[];
 export type Config={tools:string[];stores:string[];min:number;max:number;diet:string;weight:number;goal:number;height:number;age:number;sex:string;activity:number;allergens:string[];eligible:boolean};
 export const defaults:Config={tools:['Stovetop','Pan','Pot','Cutting board'],stores:['MagnumGO','Small','Arbuz','SPAR','Galmart'],min:15000,max:25000,diet:'Balanced',weight:75,goal:75,height:175,age:28,sex:'male',activity:1.375,allergens:[],eligible:true};
 export const equipment=[['Stovetop',28,56],['Oven',27,72],['Microwave',74,23],['Blender',80,44],['Kettle',63,46],['Cutting board',51,51],['Pan',24,49],['Pot',35,47]] as const;

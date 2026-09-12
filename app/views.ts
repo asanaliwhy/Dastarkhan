@@ -1,3 +1,4 @@
 export {Preferences} from './preferences';
 export {PlanViews,RecipeModal} from './results';
-export {Catalog,ChatGuide} from './catalog-chat';
+export {Catalog} from './catalog-large';
+export {ChatGuide} from './catalog-chat';
