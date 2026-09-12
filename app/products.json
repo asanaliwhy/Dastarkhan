@@ -1022,46 +1022,6 @@
     "source": "https://arzan.kz/ru/astana/p/f0c42216-b441-459d-b9f7-0ec99e1b20e4"
   },
   {
-    "id": "arzan-eec82526-c56c-4f05-84c5-0dc83adaa7d2",
-    "name": "Корм Felix Двойная Вкуснятина сухой для взрослых кошек с мяс",
-    "uuid": "eec82526-c56c-4f05-84c5-0dc83adaa7d2",
-    "title": "Корм Felix Двойная Вкуснятина сухой для взрослых кошек с мясом 600г",
-    "image": "https://arbuz.kz/image/s3/arbuz-kz-products/280326-korm_felix_suhoi_dvoinaya_vkusnyatina_dlya_vzroslyh_koshek_s_myasom_600_g.jpg?w=%w&h=%h&_c=1788540340",
-    "amount": 1000,
-    "unit": "g",
-    "label": "pack",
-    "kcal": 250,
-    "p": 5,
-    "c": 42,
-    "f": 8,
-    "category": "Pantry",
-    "vegan": false,
-    "allergens": [],
-    "offers": [
-      {
-        "store": "SPAR",
-        "price": 1809,
-        "updated": "2026-09-12T16:22:50.229695+00:00"
-      },
-      {
-        "store": "Small",
-        "price": 1809,
-        "updated": "2026-09-12T16:20:12.922755+00:00"
-      },
-      {
-        "store": "Arbuz",
-        "price": 2295,
-        "updated": "2026-09-12T13:53:52.684120+00:00"
-      },
-      {
-        "store": "Яндекс Лавка",
-        "price": 2499,
-        "updated": "2026-09-12T16:11:48.023221+00:00"
-      }
-    ],
-    "source": "https://arzan.kz/ru/astana/p/eec82526-c56c-4f05-84c5-0dc83adaa7d2"
-  },
-  {
     "id": "arzan-eebddd5a-cfef-4b19-83fa-43ac3d542f1e",
     "name": "Голубцы с мясом и рисом 1кг",
     "uuid": "eebddd5a-cfef-4b19-83fa-43ac3d542f1e",
@@ -1190,31 +1150,6 @@
       }
     ],
     "source": "https://arzan.kz/ru/astana/p/e0a140cb-5d6a-4885-88b8-02560b1fc674"
-  },
-  {
-    "id": "arzan-d4ebbd0c-b11f-4b5e-9380-1eb27fcc9556",
-    "name": "Корм для кошек Nestlé Darling с мясом и овощами 1.75кг",
-    "uuid": "d4ebbd0c-b11f-4b5e-9380-1eb27fcc9556",
-    "title": "Корм для кошек Nestlé Darling с мясом и овощами 1.75кг",
-    "image": "https://arbuz.kz/image/s3/arbuz-kz-products/308696-suhoi_korm_darling_myaso_i_ovoshi_1_75_kg.jpg?w=%w&h=%h&_c=1782218995",
-    "amount": 1000,
-    "unit": "g",
-    "label": "pack",
-    "kcal": 250,
-    "p": 5,
-    "c": 42,
-    "f": 8,
-    "category": "Pantry",
-    "vegan": true,
-    "allergens": [],
-    "offers": [
-      {
-        "store": "Arbuz",
-        "price": 3800,
-        "updated": "2026-09-12T13:56:39.731023+00:00"
-      }
-    ],
-    "source": "https://arzan.kz/ru/astana/p/d4ebbd0c-b11f-4b5e-9380-1eb27fcc9556"
   },
   {
     "id": "arzan-d174c10f-5eed-4e6f-949b-bc1fdc0b5d39",
@@ -1682,46 +1617,6 @@
     "source": "https://arzan.kz/ru/astana/p/fc2a68ac-25ec-4f66-b675-5d661a096463"
   },
   {
-    "id": "arzan-cde1749f-b799-43db-bfeb-cc59deac00ce",
-    "name": "Корм Felix суп для взрослых кошек с курицей 48г",
-    "uuid": "cde1749f-b799-43db-bfeb-cc59deac00ce",
-    "title": "Корм Felix суп для взрослых кошек с курицей 48г",
-    "image": "https://arbuz.kz/image/s3/arbuz-kz-products/file_name__7d39b79c-f497-420d-a9f6-5d9531c7ade8-7613036632331_korm_vlazhnyi_felix_sup_dlya_vzroslyh_koshek_s_kuricei_48_g_1_jpg.jpg?w=%w&h=%h&_c=1756098050",
-    "amount": 1000,
-    "unit": "g",
-    "label": "pack",
-    "kcal": 165,
-    "p": 20,
-    "c": 2,
-    "f": 8,
-    "category": "Meat",
-    "vegan": false,
-    "allergens": [],
-    "offers": [
-      {
-        "store": "SPAR",
-        "price": 185,
-        "updated": "2026-09-12T16:22:50.170092+00:00"
-      },
-      {
-        "store": "Small",
-        "price": 185,
-        "updated": "2026-09-12T16:20:12.843994+00:00"
-      },
-      {
-        "store": "Arbuz",
-        "price": 225,
-        "updated": "2026-09-12T13:51:52.330051+00:00"
-      },
-      {
-        "store": "Яндекс Лавка",
-        "price": 245,
-        "updated": "2026-09-12T16:11:47.487932+00:00"
-      }
-    ],
-    "source": "https://arzan.kz/ru/astana/p/cde1749f-b799-43db-bfeb-cc59deac00ce"
-  },
-  {
     "id": "arzan-74e3ab0b-c5f2-4c90-8146-8d4de517d513",
     "name": "Лапша Доширак со вкусом курицы 90г",
     "uuid": "74e3ab0b-c5f2-4c90-8146-8d4de517d513",
@@ -1797,41 +1692,6 @@
       }
     ],
     "source": "https://arzan.kz/ru/astana/p/191c6467-2560-4752-8ca7-1ac983acda4a"
-  },
-  {
-    "id": "arzan-f9876cea-b4ac-4d1f-9954-90fa96f3edad",
-    "name": "Корм для кошек Gourmet Gold курица 85г",
-    "uuid": "f9876cea-b4ac-4d1f-9954-90fa96f3edad",
-    "title": "Корм для кошек Gourmet Gold курица 85г",
-    "image": "https://arbuz.kz/image/s3/arbuz-kz-products/246689-korm_vlazhnyi_gourmet_gold_pashtet_s_kuricei_85_g.jpg?w=%w&h=%h&_c=1785838523",
-    "amount": 1000,
-    "unit": "g",
-    "label": "pack",
-    "kcal": 165,
-    "p": 20,
-    "c": 2,
-    "f": 8,
-    "category": "Meat",
-    "vegan": false,
-    "allergens": [],
-    "offers": [
-      {
-        "store": "MagnumGO",
-        "price": 666,
-        "updated": "2026-09-12T15:23:32.199780+00:00"
-      },
-      {
-        "store": "SPAR",
-        "price": 710,
-        "updated": "2026-09-12T16:11:44.862763+00:00"
-      },
-      {
-        "store": "Arbuz",
-        "price": 799,
-        "updated": "2026-09-12T13:53:15.528892+00:00"
-      }
-    ],
-    "source": "https://arzan.kz/ru/astana/p/f9876cea-b4ac-4d1f-9954-90fa96f3edad"
   },
   {
     "id": "arzan-f829b608-dcc4-4aff-b3d3-6001693cc067",
@@ -2389,41 +2249,6 @@
     "source": "https://arzan.kz/ru/astana/p/c65d94b7-d47e-451f-a57b-5fc8baeb1e46"
   },
   {
-    "id": "arzan-bf91103a-58e9-44c5-93df-0246e9e52531",
-    "name": "Корм для кошек Felix Sensations индейка в соусе со вкусом бе",
-    "uuid": "bf91103a-58e9-44c5-93df-0246e9e52531",
-    "title": "Корм для кошек Felix Sensations индейка в соусе со вкусом бекона 75г",
-    "image": "https://arbuz.kz/image/s3/arbuz-kz-products/file_name__2a52f01e-6bca-45af-a943-ddba79b80c7a-225352-001_jpg.jpg?w=%w&h=%h&_c=1788412837",
-    "amount": 1000,
-    "unit": "g",
-    "label": "pack",
-    "kcal": 165,
-    "p": 20,
-    "c": 2,
-    "f": 8,
-    "category": "Meat",
-    "vegan": false,
-    "allergens": [],
-    "offers": [
-      {
-        "store": "Small",
-        "price": 235,
-        "updated": "2026-09-12T16:20:12.317983+00:00"
-      },
-      {
-        "store": "MagnumGO",
-        "price": 249,
-        "updated": "2026-09-12T15:23:32.934227+00:00"
-      },
-      {
-        "store": "Arbuz",
-        "price": 280,
-        "updated": "2026-09-12T13:51:51.330353+00:00"
-      }
-    ],
-    "source": "https://arzan.kz/ru/astana/p/bf91103a-58e9-44c5-93df-0246e9e52531"
-  },
-  {
     "id": "arzan-df2d60b5-b943-4a69-ad36-90081b47dbdb",
     "name": "Бедро индейки Ордабасы Кус Дамді Ет замороженное 1кг",
     "uuid": "df2d60b5-b943-4a69-ad36-90081b47dbdb",
@@ -2646,60 +2471,6 @@
     "source": "https://arzan.kz/ru/astana/p/e882cf10-850e-4a3c-89ec-112f933a46d9"
   },
   {
-    "id": "arzan-e56047df-3051-4f79-a392-c6c1b924d67d",
-    "name": "Корм Brit Premium Sensitive ягненок и индейка для собак 1кг",
-    "uuid": "e56047df-3051-4f79-a392-c6c1b924d67d",
-    "title": "Корм Brit Premium Sensitive ягненок и индейка для собак 1кг",
-    "image": "https://f3.airbafresh.kz/api/v1/f3-airbafreshstatic/af_43caf07f947411105cd3c828f3d5dc5c",
-    "amount": 1000,
-    "unit": "g",
-    "label": "pack",
-    "kcal": 165,
-    "p": 20,
-    "c": 2,
-    "f": 8,
-    "category": "Meat",
-    "vegan": false,
-    "allergens": [],
-    "offers": [],
-    "source": "https://arzan.kz/ru/astana/p/e56047df-3051-4f79-a392-c6c1b924d67d"
-  },
-  {
-    "id": "arzan-e55cfd50-2e5e-444a-8da4-c550ff8a24ef",
-    "name": "Корм для кошек Justin индейка в соусе 75г",
-    "uuid": "e55cfd50-2e5e-444a-8da4-c550ff8a24ef",
-    "title": "Корм для кошек Justin индейка в соусе 75г",
-    "image": "https://arbuz.kz/image/s3/arbuz-kz-products/image__311019-korm_justin_konservirovannyi_dlya_koshek_s_indeikoi_v_souse_75_g.jpg?w=%w&h=%h&_c=1780912701",
-    "amount": 1000,
-    "unit": "g",
-    "label": "pack",
-    "kcal": 165,
-    "p": 20,
-    "c": 2,
-    "f": 8,
-    "category": "Meat",
-    "vegan": false,
-    "allergens": [],
-    "offers": [
-      {
-        "store": "Small",
-        "price": 115,
-        "updated": "2026-09-12T16:24:49.069645+00:00"
-      },
-      {
-        "store": "Fix Price",
-        "price": 129,
-        "updated": "2026-09-12T16:51:19.619137+00:00"
-      },
-      {
-        "store": "Arbuz",
-        "price": 185,
-        "updated": "2026-09-12T13:55:37.833343+00:00"
-      }
-    ],
-    "source": "https://arzan.kz/ru/astana/p/e55cfd50-2e5e-444a-8da4-c550ff8a24ef"
-  },
-  {
     "id": "arzan-4abf4091-09ff-4572-a24f-029bd8f5ccdf",
     "name": "Лапша Доширак Чан Рамен со вкусом острой говядины 120г",
     "uuid": "4abf4091-09ff-4572-a24f-029bd8f5ccdf",
@@ -2755,56 +2526,6 @@
       }
     ],
     "source": "https://arzan.kz/ru/astana/p/4abf4091-09ff-4572-a24f-029bd8f5ccdf"
-  },
-  {
-    "id": "arzan-fc725d8d-dcef-4dd5-9cd5-6c65720b3614",
-    "name": "Корм для кошек Felix Аппетитные кусочки говядина влажный 75г",
-    "uuid": "fc725d8d-dcef-4dd5-9cd5-6c65720b3614",
-    "title": "Корм для кошек Felix Аппетитные кусочки говядина влажный 75г",
-    "image": "https://arbuz.kz/image/s3/arbuz-kz-products/file_name__c2fd903e-0e3b-4c9d-a056-86c3a5b58f2b-8445290141552_korm_vlazhnyi_felix_dlya_koshek_appetitnye_kusochki_govyadina_75_g_1_jpg.jpg?w=%w&h=%h&_c=1755848618",
-    "amount": 1000,
-    "unit": "g",
-    "label": "pack",
-    "kcal": 165,
-    "p": 20,
-    "c": 2,
-    "f": 8,
-    "category": "Meat",
-    "vegan": false,
-    "allergens": [],
-    "offers": [
-      {
-        "store": "Fix Price",
-        "price": 224,
-        "updated": "2026-09-12T16:50:59.736319+00:00"
-      },
-      {
-        "store": "SPAR",
-        "price": 235,
-        "updated": "2026-09-12T16:22:49.478990+00:00"
-      },
-      {
-        "store": "Small",
-        "price": 235,
-        "updated": "2026-09-12T16:20:11.275948+00:00"
-      },
-      {
-        "store": "MagnumGO",
-        "price": 249,
-        "updated": "2026-09-12T15:23:32.070777+00:00"
-      },
-      {
-        "store": "Arbuz",
-        "price": 280,
-        "updated": "2026-09-12T13:51:48.347898+00:00"
-      },
-      {
-        "store": "Яндекс Лавка",
-        "price": 309,
-        "updated": "2026-09-12T16:11:44.888588+00:00"
-      }
-    ],
-    "source": "https://arzan.kz/ru/astana/p/fc725d8d-dcef-4dd5-9cd5-6c65720b3614"
   },
   {
     "id": "arzan-a3c465f2-5878-4ef8-a239-18095dd5421a",
@@ -6159,43 +5880,6 @@
     "source": "https://arzan.kz/ru/astana/p/d1a3637a-e0a3-49e2-9e33-9f3d32b29504"
   },
   {
-    "id": "arzan-cd8f4d21-beb1-405f-924f-8bbdf7d1cb12",
-    "name": "Корм для кошек Justin курица с печенью в соусе 75г",
-    "uuid": "cd8f4d21-beb1-405f-924f-8bbdf7d1cb12",
-    "title": "Корм для кошек Justin курица с печенью в соусе 75г",
-    "image": "https://arbuz.kz/image/s3/arbuz-kz-products/image__311017-korm_justin_konservirovannyi_dlya_koshek_kurica_s_pechenyu_v_souse_75_g.jpg?w=%w&h=%h&_c=1780913973",
-    "amount": 1000,
-    "unit": "g",
-    "label": "pack",
-    "kcal": 165,
-    "p": 20,
-    "c": 2,
-    "f": 8,
-    "category": "Meat",
-    "vegan": false,
-    "allergens": [
-      "gluten"
-    ],
-    "offers": [
-      {
-        "store": "Small",
-        "price": 115,
-        "updated": "2026-09-12T16:24:48.951180+00:00"
-      },
-      {
-        "store": "Fix Price",
-        "price": 137,
-        "updated": "2026-09-12T16:51:01.343059+00:00"
-      },
-      {
-        "store": "Arbuz",
-        "price": 185,
-        "updated": "2026-09-12T13:55:37.714573+00:00"
-      }
-    ],
-    "source": "https://arzan.kz/ru/astana/p/cd8f4d21-beb1-405f-924f-8bbdf7d1cb12"
-  },
-  {
     "id": "arzan-c1169156-f272-4fbc-8ae1-fc161e873936",
     "name": "Паштет Галерея Вкуса пате-мусс из печени птицы с клубникой п",
     "uuid": "c1169156-f272-4fbc-8ae1-fc161e873936",
@@ -6221,33 +5905,6 @@
       }
     ],
     "source": "https://arzan.kz/ru/astana/p/c1169156-f272-4fbc-8ae1-fc161e873936"
-  },
-  {
-    "id": "arzan-ba1939cf-b5f7-4fab-94a8-9866dace3897",
-    "name": "Корм для кошек Kormell паштет говядина-печень 75г",
-    "uuid": "ba1939cf-b5f7-4fab-94a8-9866dace3897",
-    "title": "Корм для кошек Kormell паштет говядина-печень 75г",
-    "image": "https://imageproxy.wolt.com/assets/69426efd5b9025d5054a48bb",
-    "amount": 1000,
-    "unit": "g",
-    "label": "pack",
-    "kcal": 165,
-    "p": 20,
-    "c": 2,
-    "f": 8,
-    "category": "Meat",
-    "vegan": false,
-    "allergens": [
-      "gluten"
-    ],
-    "offers": [
-      {
-        "store": "Small",
-        "price": 215,
-        "updated": "2026-09-12T16:24:49.874029+00:00"
-      }
-    ],
-    "source": "https://arzan.kz/ru/astana/p/ba1939cf-b5f7-4fab-94a8-9866dace3897"
   },
   {
     "id": "arzan-b98588f0-71f8-447b-a186-8135e6b4d9b7",
@@ -6738,33 +6395,6 @@
     "source": "https://arzan.kz/ru/astana/p/a4592fa5-f280-4fa3-87be-c6cb9121afa9"
   },
   {
-    "id": "arzan-8e7e4a70-023a-43fd-876a-1df99b27b199",
-    "name": "Корм для кошек Mancho рыба 1.5кг",
-    "uuid": "8e7e4a70-023a-43fd-876a-1df99b27b199",
-    "title": "Корм для кошек Mancho рыба 1.5кг",
-    "image": "https://imageproxy.wolt.com/assets/6a8a5df8014c95a4949d1f8d",
-    "amount": 1000,
-    "unit": "g",
-    "label": "pack",
-    "kcal": 150,
-    "p": 21,
-    "c": 0,
-    "f": 7,
-    "category": "Fish",
-    "vegan": false,
-    "allergens": [
-      "fish"
-    ],
-    "offers": [
-      {
-        "store": "Small",
-        "price": 3000,
-        "updated": "2026-09-12T16:24:50.267560+00:00"
-      }
-    ],
-    "source": "https://arzan.kz/ru/astana/p/8e7e4a70-023a-43fd-876a-1df99b27b199"
-  },
-  {
     "id": "arzan-8a0751dd-9ae7-4f46-9d78-854c3d58d8a3",
     "name": "рыба сибас Семь Морей потрошеный замороженный 400г",
     "uuid": "8a0751dd-9ae7-4f46-9d78-854c3d58d8a3",
@@ -7007,58 +6637,6 @@
     "source": "https://arzan.kz/ru/astana/p/c7fc5200-0176-4815-ab59-1615ac0b926e"
   },
   {
-    "id": "arzan-c07542f8-26e5-459d-b1b5-1831a77990ad",
-    "name": "Корм Felix Аппетитные кусочки лосось в желе 75г",
-    "uuid": "c07542f8-26e5-459d-b1b5-1831a77990ad",
-    "title": "Корм Felix Аппетитные кусочки лосось в желе 75г",
-    "image": "https://arbuz.kz/image/s3/arbuz-kz-products/file_name__371ae1ce-ddbe-466a-96be-6ffd6d183f38-8445290140111_korm_vlazhnyi_felix_losos_v_zhele_dlya_vzroslyh_koshek_75_g_1_jpg.jpg?w=%w&h=%h&_c=1755855892",
-    "amount": 1000,
-    "unit": "g",
-    "label": "pack",
-    "kcal": 150,
-    "p": 21,
-    "c": 0,
-    "f": 7,
-    "category": "Fish",
-    "vegan": false,
-    "allergens": [
-      "fish"
-    ],
-    "offers": [
-      {
-        "store": "SPAR",
-        "price": 235,
-        "updated": "2026-09-12T16:22:49.371149+00:00"
-      },
-      {
-        "store": "Small",
-        "price": 235,
-        "updated": "2026-09-12T16:20:11.165928+00:00"
-      },
-      {
-        "store": "MagnumGO",
-        "price": 249,
-        "updated": "2026-09-12T15:23:32.342623+00:00"
-      },
-      {
-        "store": "Galmart",
-        "price": 270,
-        "updated": "2026-09-12T15:52:07.676376+00:00"
-      },
-      {
-        "store": "Arbuz",
-        "price": 280,
-        "updated": "2026-09-12T13:51:50.197015+00:00"
-      },
-      {
-        "store": "Яндекс Лавка",
-        "price": 309,
-        "updated": "2026-09-12T16:11:44.331339+00:00"
-      }
-    ],
-    "source": "https://arzan.kz/ru/astana/p/c07542f8-26e5-459d-b1b5-1831a77990ad"
-  },
-  {
     "id": "arzan-eb75d513-9710-48b6-a742-3f3802307337",
     "name": "Икра Обкомовская лососевая зернистая стекло 140г",
     "uuid": "eb75d513-9710-48b6-a742-3f3802307337",
@@ -7121,38 +6699,6 @@
       }
     ],
     "source": "https://arzan.kz/ru/astana/p/ff4c3994-4227-49f0-a113-d03d372eb642"
-  },
-  {
-    "id": "arzan-fdf087c0-2bf1-45eb-b3ac-61e7b72cd121",
-    "name": "Корм для кошек с тунцом и лососем консервированный 85г",
-    "uuid": "fdf087c0-2bf1-45eb-b3ac-61e7b72cd121",
-    "title": "Корм для кошек с тунцом и лососем консервированный 85г",
-    "image": "https://arbuz.kz/image/s3/arbuz-kz-products/image__336636-korm_probalance_gourmet_diet_konservirovannyi_dlya_koshek_s_tuncom_i_lososem_v_souse_pauch_85_g.jpg?w=%w&h=%h&_c=1789041908",
-    "amount": 1000,
-    "unit": "g",
-    "label": "pack",
-    "kcal": 150,
-    "p": 21,
-    "c": 0,
-    "f": 7,
-    "category": "Fish",
-    "vegan": false,
-    "allergens": [
-      "fish"
-    ],
-    "offers": [
-      {
-        "store": "Arbuz",
-        "price": 199,
-        "updated": "2026-09-12T14:00:11.766370+00:00"
-      },
-      {
-        "store": "Small",
-        "price": 229,
-        "updated": "2026-09-12T16:24:50.588176+00:00"
-      }
-    ],
-    "source": "https://arzan.kz/ru/astana/p/fdf087c0-2bf1-45eb-b3ac-61e7b72cd121"
   },
   {
     "id": "arzan-efab5ebb-d50e-4f64-b63a-37d7206f0e11",
@@ -7268,27 +6814,6 @@
     "source": "https://arzan.kz/ru/astana/p/d88a9a27-0260-4c12-b0d4-ba3a3d5bff7c"
   },
   {
-    "id": "arzan-d5bea460-dcd3-4102-a431-538c3f3763aa",
-    "name": "Корм Sirius для взрослых кошек лосось и рис 1.5кг",
-    "uuid": "d5bea460-dcd3-4102-a431-538c3f3763aa",
-    "title": "Корм Sirius для взрослых кошек лосось и рис 1.5кг",
-    "image": "https://arbuz.kz/image/s3/arbuz-kz-products/309156-suhoi_polnorac_korm_sirius_dlya_vzroslyh_koshek_losos_i_ris_1_5_kg.jpg?w=%w&h=%h&_c=1778626951",
-    "amount": 1000,
-    "unit": "g",
-    "label": "pack",
-    "kcal": 150,
-    "p": 21,
-    "c": 0,
-    "f": 7,
-    "category": "Fish",
-    "vegan": true,
-    "allergens": [
-      "fish"
-    ],
-    "offers": [],
-    "source": "https://arzan.kz/ru/astana/p/d5bea460-dcd3-4102-a431-538c3f3763aa"
-  },
-  {
     "id": "arzan-be8d324d-14a6-491f-a4c5-295b9468eeab",
     "name": "Крем-суп Titbit с кусочками лосося 10г",
     "uuid": "be8d324d-14a6-491f-a4c5-295b9468eeab",
@@ -7314,33 +6839,6 @@
       }
     ],
     "source": "https://arzan.kz/ru/astana/p/be8d324d-14a6-491f-a4c5-295b9468eeab"
-  },
-  {
-    "id": "arzan-b91fa297-c9ad-4bf8-b308-f9e36f98852f",
-    "name": "Корм для кошек Perfect Fit здоровье почек лосось 75г",
-    "uuid": "b91fa297-c9ad-4bf8-b308-f9e36f98852f",
-    "title": "Корм для кошек Perfect Fit здоровье почек лосось 75г",
-    "image": "https://imageproxy.wolt.com/assets/6a8a63935174216729171be4",
-    "amount": 1000,
-    "unit": "g",
-    "label": "pack",
-    "kcal": 150,
-    "p": 21,
-    "c": 0,
-    "f": 7,
-    "category": "Fish",
-    "vegan": false,
-    "allergens": [
-      "fish"
-    ],
-    "offers": [
-      {
-        "store": "Small",
-        "price": 295,
-        "updated": "2026-09-12T16:27:12.498794+00:00"
-      }
-    ],
-    "source": "https://arzan.kz/ru/astana/p/b91fa297-c9ad-4bf8-b308-f9e36f98852f"
   },
   {
     "id": "arzan-b88ad03d-0e30-4237-9532-923c8c5f7019",
@@ -7839,56 +7337,6 @@
     "source": "https://arzan.kz/ru/astana/p/e43f5a89-3a05-4950-b56b-719df0a1dda4"
   },
   {
-    "id": "arzan-de6a59d5-1f56-455c-b001-6a72870fc513",
-    "name": "Корм Felix Аппетитные кусочки влажный форель в желе для взро",
-    "uuid": "de6a59d5-1f56-455c-b001-6a72870fc513",
-    "title": "Корм Felix Аппетитные кусочки влажный форель в желе для взрослых кошек 75г",
-    "image": "https://arbuz.kz/image/s3/arbuz-kz-products/file_name__d07a6858-a4c9-4436-86a7-7a795efcbae2-8445290141811_korm_vlazhnyi_felix_forel_v_zhele_dlya_vzroslyh_koshek_75_g_1_1_jpg.jpg?w=%w&h=%h&_c=1755774343",
-    "amount": 1000,
-    "unit": "g",
-    "label": "pack",
-    "kcal": 150,
-    "p": 21,
-    "c": 0,
-    "f": 7,
-    "category": "Fish",
-    "vegan": false,
-    "allergens": [],
-    "offers": [
-      {
-        "store": "SPAR",
-        "price": 235,
-        "updated": "2026-09-12T16:22:49.641726+00:00"
-      },
-      {
-        "store": "Small",
-        "price": 235,
-        "updated": "2026-09-12T16:20:11.502575+00:00"
-      },
-      {
-        "store": "MagnumGO",
-        "price": 249,
-        "updated": "2026-09-12T15:23:32.683538+00:00"
-      },
-      {
-        "store": "Galmart",
-        "price": 270,
-        "updated": "2026-09-12T15:52:08.496958+00:00"
-      },
-      {
-        "store": "Arbuz",
-        "price": 280,
-        "updated": "2026-09-12T13:51:06.728667+00:00"
-      },
-      {
-        "store": "Яндекс Лавка",
-        "price": 309,
-        "updated": "2026-09-12T16:11:46.251636+00:00"
-      }
-    ],
-    "source": "https://arzan.kz/ru/astana/p/de6a59d5-1f56-455c-b001-6a72870fc513"
-  },
-  {
     "id": "arzan-dbf49eb0-7abe-4abb-9699-6ebd01ea553b",
     "name": "Форель АС слабосоленая 200г",
     "uuid": "dbf49eb0-7abe-4abb-9699-6ebd01ea553b",
@@ -8107,31 +7555,6 @@
       }
     ],
     "source": "https://arzan.kz/ru/astana/p/5a78a564-d450-49a4-98da-2ef5388dd2db"
-  },
-  {
-    "id": "arzan-50560eea-8779-401f-8d68-6b4b7d479a0b",
-    "name": "Корм Jarvi паштет для кошек с форелью 100г",
-    "uuid": "50560eea-8779-401f-8d68-6b4b7d479a0b",
-    "title": "Корм Jarvi паштет для кошек с форелью 100г",
-    "image": "https://arbuz.kz/image/s3/arbuz-kz-products/image__344916-korm_jarvi_vlazhnyi_myasnoi_pashtet_dlya_koshek_s_chuvstvitelnym_pishevareniem_s_forelyu_100_g.jpg?w=%w&h=%h&_c=1787811051",
-    "amount": 1000,
-    "unit": "g",
-    "label": "pack",
-    "kcal": 150,
-    "p": 21,
-    "c": 0,
-    "f": 7,
-    "category": "Fish",
-    "vegan": false,
-    "allergens": [],
-    "offers": [
-      {
-        "store": "Arbuz",
-        "price": 905,
-        "updated": "2026-09-12T13:51:03.647851+00:00"
-      }
-    ],
-    "source": "https://arzan.kz/ru/astana/p/50560eea-8779-401f-8d68-6b4b7d479a0b"
   },
   {
     "id": "arzan-4a87c7ee-eaaf-4b90-a23d-5bcbbe009fa8",
@@ -8539,38 +7962,6 @@
       }
     ],
     "source": "https://arzan.kz/ru/astana/p/c9927ce8-da71-496c-a403-f1bff8315f1e"
-  },
-  {
-    "id": "arzan-bba9c55f-e52e-4ace-9dca-3873714f96dc",
-    "name": "Корм для кошек Me-O тунец и курица 70г",
-    "uuid": "bba9c55f-e52e-4ace-9dca-3873714f96dc",
-    "title": "Корм для кошек Me-O тунец и курица 70г",
-    "image": "https://imageproxy.wolt.com/assets/6a8a613a606343e3a5077854",
-    "amount": 1000,
-    "unit": "g",
-    "label": "pack",
-    "kcal": 165,
-    "p": 20,
-    "c": 2,
-    "f": 8,
-    "category": "Meat",
-    "vegan": false,
-    "allergens": [
-      "fish"
-    ],
-    "offers": [
-      {
-        "store": "SPAR",
-        "price": 665,
-        "updated": "2026-09-12T16:26:11.075524+00:00"
-      },
-      {
-        "store": "Small",
-        "price": 665,
-        "updated": "2026-09-12T16:27:12.796949+00:00"
-      }
-    ],
-    "source": "https://arzan.kz/ru/astana/p/bba9c55f-e52e-4ace-9dca-3873714f96dc"
   },
   {
     "id": "arzan-ea9f283c-81ed-4fac-a9b8-9fac3d96191b",
@@ -20428,58 +19819,6 @@
     "source": "https://arzan.kz/ru/astana/p/b42cdee4-51d7-48da-bcdb-8ec6ad2864e5"
   },
   {
-    "id": "arzan-8bac963d-6ca3-4b13-9123-8a2ddfab98f4",
-    "name": "Зубная паста R.O.C.S. Whitening активный кальций отбеливающа",
-    "uuid": "8bac963d-6ca3-4b13-9123-8a2ddfab98f4",
-    "title": "Зубная паста R.O.C.S. Whitening активный кальций отбеливающая 94г",
-    "image": "https://arbuz.kz/image/s3/arbuz-kz-products/267575-pasta_zubnaya_r_o_c_s_aktivnyi_kalcii_otbelivayushaya_94_g.jpg?w=%w&h=%h&_c=1788159400",
-    "amount": 1000,
-    "unit": "g",
-    "label": "pack",
-    "kcal": 350,
-    "p": 11,
-    "c": 70,
-    "f": 3,
-    "category": "Grains",
-    "vegan": true,
-    "allergens": [
-      "gluten"
-    ],
-    "offers": [
-      {
-        "store": "MagnumGO",
-        "price": 2699,
-        "updated": "2026-09-12T15:24:53.970023+00:00"
-      },
-      {
-        "store": "SPAR",
-        "price": 3327,
-        "updated": "2026-09-12T16:22:26.064648+00:00"
-      },
-      {
-        "store": "Small",
-        "price": 3327,
-        "updated": "2026-09-12T16:24:35.914597+00:00"
-      },
-      {
-        "store": "Galmart",
-        "price": 3980,
-        "updated": "2026-09-12T15:57:06.295716+00:00"
-      },
-      {
-        "store": "Arbuz",
-        "price": 4069,
-        "updated": "2026-09-12T13:54:11.916709+00:00"
-      },
-      {
-        "store": "Яндекс Лавка",
-        "price": 4419,
-        "updated": "2026-09-12T16:17:21.221780+00:00"
-      }
-    ],
-    "source": "https://arzan.kz/ru/astana/p/8bac963d-6ca3-4b13-9123-8a2ddfab98f4"
-  },
-  {
     "id": "arzan-fe5fd9ca-21a0-434d-aa3f-1422f7bddf75",
     "name": "Паста зубная Lacalut Flora 75мл",
     "uuid": "fe5fd9ca-21a0-434d-aa3f-1422f7bddf75",
@@ -20542,58 +19881,6 @@
       }
     ],
     "source": "https://arzan.kz/ru/astana/p/fbb1613a-9450-4364-b4d0-b9f78c59a8ab"
-  },
-  {
-    "id": "arzan-f7cec04f-8d3b-4082-ad63-67c1c21b474a",
-    "name": "Зубная паста Colgate Total 12 Чистая Мята комплексная антиба",
-    "uuid": "f7cec04f-8d3b-4082-ad63-67c1c21b474a",
-    "title": "Зубная паста Colgate Total 12 Чистая Мята комплексная антибактериальная 75мл",
-    "image": "https://arbuz.kz/image/s3/arbuz-kz-products/file_name__113b85fb-cdbc-43c0-9e1c-793c4f04b99b-6920354816871_jpg.jpg?w=%w&h=%h&_c=1752641581",
-    "amount": 1000,
-    "unit": "g",
-    "label": "pack",
-    "kcal": 350,
-    "p": 11,
-    "c": 70,
-    "f": 3,
-    "category": "Grains",
-    "vegan": true,
-    "allergens": [
-      "gluten"
-    ],
-    "offers": [
-      {
-        "store": "SPAR",
-        "price": 1199,
-        "updated": "2026-09-12T16:10:44.630252+00:00"
-      },
-      {
-        "store": "Small",
-        "price": 1199,
-        "updated": "2026-09-12T16:19:39.788431+00:00"
-      },
-      {
-        "store": "MagnumGO",
-        "price": 1369,
-        "updated": "2026-09-12T15:26:25.928558+00:00"
-      },
-      {
-        "store": "Arbuz",
-        "price": 1649,
-        "updated": "2026-09-12T13:59:35.099025+00:00"
-      },
-      {
-        "store": "Galmart",
-        "price": 2210,
-        "updated": "2026-09-12T15:52:15.915668+00:00"
-      },
-      {
-        "store": "Яндекс Лавка",
-        "price": 2519,
-        "updated": "2026-09-12T16:14:34.373868+00:00"
-      }
-    ],
-    "source": "https://arzan.kz/ru/astana/p/f7cec04f-8d3b-4082-ad63-67c1c21b474a"
   },
   {
     "id": "arzan-f644f751-0c83-4e5e-b26c-6fbdd25dbbbb",
@@ -20665,90 +19952,6 @@
     "source": "https://arzan.kz/ru/astana/p/f4a83626-dbf1-445f-9caa-a4fcf91b9748"
   },
   {
-    "id": "arzan-af98bee7-e570-49cc-afc6-2b013904e12c",
-    "name": "Зубная паста Colgate Тройное Действие Экстра Отбеливание 100",
-    "uuid": "af98bee7-e570-49cc-afc6-2b013904e12c",
-    "title": "Зубная паста Colgate Тройное Действие Экстра Отбеливание 100мл",
-    "image": "https://arbuz.kz/image/s3/arbuz-kz-products/file_name__8db02a00-aa45-45a2-b0d8-289b9bcdd954-6920354824326_jpg.jpg?w=%w&h=%h&_c=1720085976",
-    "amount": 1000,
-    "unit": "g",
-    "label": "pack",
-    "kcal": 350,
-    "p": 11,
-    "c": 70,
-    "f": 3,
-    "category": "Grains",
-    "vegan": true,
-    "allergens": [
-      "gluten"
-    ],
-    "offers": [
-      {
-        "store": "MagnumGO",
-        "price": 859,
-        "updated": "2026-09-12T15:24:53.313974+00:00"
-      },
-      {
-        "store": "SPAR",
-        "price": 883,
-        "updated": "2026-09-12T16:22:27.644024+00:00"
-      },
-      {
-        "store": "Small",
-        "price": 883,
-        "updated": "2026-09-12T16:26:59.589604+00:00"
-      },
-      {
-        "store": "Arbuz",
-        "price": 1135,
-        "updated": "2026-09-12T13:54:54.150364+00:00"
-      }
-    ],
-    "source": "https://arzan.kz/ru/astana/p/af98bee7-e570-49cc-afc6-2b013904e12c"
-  },
-  {
-    "id": "arzan-598b81bf-6996-4900-bc4e-bbc5533188cc",
-    "name": "Зубная паста Splat Professional отбеливание плюс 40мл",
-    "uuid": "598b81bf-6996-4900-bc4e-bbc5533188cc",
-    "title": "Зубная паста Splat Professional отбеливание плюс 40мл",
-    "image": "https://arbuz.kz/image/s3/arbuz-kz-products/file_name__0a595422-410d-4c26-a966-9b8f7901599f-274452-001_jpg.jpg?w=%w&h=%h&_c=1779356947",
-    "amount": 1000,
-    "unit": "g",
-    "label": "pack",
-    "kcal": 350,
-    "p": 11,
-    "c": 70,
-    "f": 3,
-    "category": "Grains",
-    "vegan": true,
-    "allergens": [
-      "gluten"
-    ],
-    "offers": [
-      {
-        "store": "SPAR",
-        "price": 787,
-        "updated": "2026-09-12T16:10:43.250272+00:00"
-      },
-      {
-        "store": "Small",
-        "price": 787,
-        "updated": "2026-09-12T16:19:38.910300+00:00"
-      },
-      {
-        "store": "MagnumGO",
-        "price": 835,
-        "updated": "2026-09-12T15:24:54.296464+00:00"
-      },
-      {
-        "store": "Arbuz",
-        "price": 1075,
-        "updated": "2026-09-12T13:58:08.179834+00:00"
-      }
-    ],
-    "source": "https://arzan.kz/ru/astana/p/598b81bf-6996-4900-bc4e-bbc5533188cc"
-  },
-  {
     "id": "arzan-55918c0d-5dcc-41a1-94be-fa5504adb421",
     "name": "Паста Milka ореховая с добавлением какао 350г",
     "uuid": "55918c0d-5dcc-41a1-94be-fa5504adb421",
@@ -20789,90 +19992,6 @@
       }
     ],
     "source": "https://arzan.kz/ru/astana/p/55918c0d-5dcc-41a1-94be-fa5504adb421"
-  },
-  {
-    "id": "arzan-507bf895-d13d-47dc-9aeb-b4849d5f1c86",
-    "name": "Зубная паста Splat Professional Отбеливание Плюс 100мл",
-    "uuid": "507bf895-d13d-47dc-9aeb-b4849d5f1c86",
-    "title": "Зубная паста Splat Professional Отбеливание Плюс 100мл",
-    "image": "https://arbuz.kz/image/s3/arbuz-kz-products/image__207371-pasta_zubnaya_splat_professional_otbelivanie_100_ml.jpg?w=%w&h=%h&_c=1780925984",
-    "amount": 1000,
-    "unit": "g",
-    "label": "pack",
-    "kcal": 350,
-    "p": 11,
-    "c": 70,
-    "f": 3,
-    "category": "Grains",
-    "vegan": true,
-    "allergens": [
-      "gluten"
-    ],
-    "offers": [
-      {
-        "store": "MagnumGO",
-        "price": 1780,
-        "updated": "2026-09-12T15:22:44.014168+00:00"
-      },
-      {
-        "store": "SPAR",
-        "price": 1879,
-        "updated": "2026-09-12T16:10:41.910552+00:00"
-      },
-      {
-        "store": "Small",
-        "price": 1879,
-        "updated": "2026-09-12T15:58:58.108035+00:00"
-      },
-      {
-        "store": "Arbuz",
-        "price": 2145,
-        "updated": "2026-09-12T13:53:30.915196+00:00"
-      },
-      {
-        "store": "Яндекс Лавка",
-        "price": 2399,
-        "updated": "2026-09-12T16:17:15.177000+00:00"
-      }
-    ],
-    "source": "https://arzan.kz/ru/astana/p/507bf895-d13d-47dc-9aeb-b4849d5f1c86"
-  },
-  {
-    "id": "arzan-02f6a0a1-404e-4c43-af5a-236e6e2d6300",
-    "name": "Зубная паста Splat Daily комплексная укрепляющее отбеливание",
-    "uuid": "02f6a0a1-404e-4c43-af5a-236e6e2d6300",
-    "title": "Зубная паста Splat Daily комплексная укрепляющее отбеливание 100г",
-    "image": "https://arbuz.kz/image/s3/arbuz-kz-products/file_name__47c86dfc-78b4-400a-8410-e369446de6a2-4603014038661_jpg.jpg?w=%w&h=%h&_c=1772015241",
-    "amount": 1000,
-    "unit": "g",
-    "label": "pack",
-    "kcal": 350,
-    "p": 11,
-    "c": 70,
-    "f": 3,
-    "category": "Grains",
-    "vegan": true,
-    "allergens": [
-      "gluten"
-    ],
-    "offers": [
-      {
-        "store": "MagnumGO",
-        "price": 1399,
-        "updated": "2026-09-12T15:27:27.738097+00:00"
-      },
-      {
-        "store": "SPAR",
-        "price": 1480,
-        "updated": "2026-09-12T16:25:56.919613+00:00"
-      },
-      {
-        "store": "Small",
-        "price": 1480,
-        "updated": "2026-09-12T16:28:12.819739+00:00"
-      }
-    ],
-    "source": "https://arzan.kz/ru/astana/p/02f6a0a1-404e-4c43-af5a-236e6e2d6300"
   },
   {
     "id": "arzan-30b4ff84-cc0c-40be-bbb5-b71d69bbd50d",
@@ -26290,46 +25409,6 @@
     "source": "https://arzan.kz/ru/astana/p/caf32e32-63c9-44d1-8786-b47192a0102f"
   },
   {
-    "id": "arzan-c70251a4-9341-4a6a-b35a-177579f8caed",
-    "name": "Корм для кошек Felix Sensations утка в соусе с морковью 75г",
-    "uuid": "c70251a4-9341-4a6a-b35a-177579f8caed",
-    "title": "Корм для кошек Felix Sensations утка в соусе с морковью 75г",
-    "image": "https://arbuz.kz/image/s3/arbuz-kz-products/file_name__a1ed52b2-14ec-4588-9b6f-6cdc4a68f745-8445290149121_2_jpg.jpg?w=%w&h=%h&_c=1750677228",
-    "amount": 1000,
-    "unit": "g",
-    "label": "pack",
-    "kcal": 55,
-    "p": 1.5,
-    "c": 11,
-    "f": 0.4,
-    "category": "Produce",
-    "vegan": true,
-    "allergens": [],
-    "offers": [
-      {
-        "store": "SPAR",
-        "price": 235,
-        "updated": "2026-09-12T16:22:49.863027+00:00"
-      },
-      {
-        "store": "Small",
-        "price": 235,
-        "updated": "2026-09-12T16:20:12.149444+00:00"
-      },
-      {
-        "store": "MagnumGO",
-        "price": 249,
-        "updated": "2026-09-12T15:27:42.354681+00:00"
-      },
-      {
-        "store": "Arbuz",
-        "price": 280,
-        "updated": "2026-09-12T13:53:16.252572+00:00"
-      }
-    ],
-    "source": "https://arzan.kz/ru/astana/p/c70251a4-9341-4a6a-b35a-177579f8caed"
-  },
-  {
     "id": "arzan-bc13acfc-ebcb-4643-97bd-3bc9ab4d963e",
     "name": "Заправка салатная Master Oy для острой моркови 60г",
     "uuid": "bc13acfc-ebcb-4643-97bd-3bc9ab4d963e",
@@ -28230,31 +27309,6 @@
     "source": "https://arzan.kz/ru/astana/p/fde9b345-a6f4-44de-b37e-20734b9a3d7b"
   },
   {
-    "id": "arzan-d54d1c51-a294-46ed-a2c3-eff551ec6d01",
-    "name": "Стиральный порошок Persil Color Deep Clean Plus для цветных ",
-    "uuid": "d54d1c51-a294-46ed-a2c3-eff551ec6d01",
-    "title": "Стиральный порошок Persil Color Deep Clean Plus для цветных тканей 5.5кг",
-    "image": "https://arbuz.kz/image/s3/arbuz-kz-products/image__306172-stiralnyi_poroshok_persil_color_36_stirok_5_5_kg_.jpg?w=%w&h=%h&_c=1782969803",
-    "amount": 1000,
-    "unit": "g",
-    "label": "pack",
-    "kcal": 250,
-    "p": 5,
-    "c": 42,
-    "f": 8,
-    "category": "Pantry",
-    "vegan": false,
-    "allergens": [],
-    "offers": [
-      {
-        "store": "Яндекс Лавка",
-        "price": 10789,
-        "updated": "2026-09-12T16:12:13.596092+00:00"
-      }
-    ],
-    "source": "https://arzan.kz/ru/astana/p/d54d1c51-a294-46ed-a2c3-eff551ec6d01"
-  },
-  {
     "id": "arzan-5e9ee3b1-e673-4dc4-9d49-8e297b8bd88e",
     "name": "Гель для стирки Persil Color концентрированный цветных ткане",
     "uuid": "5e9ee3b1-e673-4dc4-9d49-8e297b8bd88e",
@@ -28300,36 +27354,6 @@
     "source": "https://arzan.kz/ru/astana/p/5e9ee3b1-e673-4dc4-9d49-8e297b8bd88e"
   },
   {
-    "id": "arzan-ecee0277-3f65-48cf-a3cd-d65d9ffc8501",
-    "name": "Порошок стиральный BioMio BIO-UNIVERSAL экологичный концентр",
-    "uuid": "ecee0277-3f65-48cf-a3cd-d65d9ffc8501",
-    "title": "Порошок стиральный BioMio BIO-UNIVERSAL экологичный концентрат для цветного и белого 2400г",
-    "image": "https://arbuz.kz/image/s3/arbuz-kz-products/file_name__92574377-dcba-4ff7-8675-b9431218ba86-7640168939489_jpg.jpg?w=%w&h=%h&_c=1749013666",
-    "amount": 1000,
-    "unit": "g",
-    "label": "pack",
-    "kcal": 250,
-    "p": 5,
-    "c": 42,
-    "f": 8,
-    "category": "Pantry",
-    "vegan": false,
-    "allergens": [],
-    "offers": [
-      {
-        "store": "MagnumGO",
-        "price": 6555,
-        "updated": "2026-09-12T15:27:40.871713+00:00"
-      },
-      {
-        "store": "Детский Мир",
-        "price": 8305,
-        "updated": "2026-09-12T14:53:01.952834+00:00"
-      }
-    ],
-    "source": "https://arzan.kz/ru/astana/p/ecee0277-3f65-48cf-a3cd-d65d9ffc8501"
-  },
-  {
     "id": "arzan-e6a8b3d1-3450-4e0e-ab9b-cfb5d8d5a4c9",
     "name": "Гель для стирки Perwoll для цветного 3.96л",
     "uuid": "e6a8b3d1-3450-4e0e-ab9b-cfb5d8d5a4c9",
@@ -28353,31 +27377,6 @@
       }
     ],
     "source": "https://arzan.kz/ru/astana/p/e6a8b3d1-3450-4e0e-ab9b-cfb5d8d5a4c9"
-  },
-  {
-    "id": "arzan-afb7aea4-3e0e-4cdf-8dee-5b6f90576b38",
-    "name": "Стиральный порошок Persil Color deep clean plus для цветных ",
-    "uuid": "afb7aea4-3e0e-4cdf-8dee-5b6f90576b38",
-    "title": "Стиральный порошок Persil Color deep clean plus для цветных тканей 7.5кг",
-    "image": "https://arbuz.kz/image/s3/arbuz-kz-products/file_name__bdfe71d8-0011-406d-8a33-68470a223765-306167_9000101582345_stiralnyi_poroshok_persil_color_7_5_kg_50_st_01_jpg.jpg?w=%w&h=%h&_c=1788263660",
-    "amount": 1000,
-    "unit": "g",
-    "label": "pack",
-    "kcal": 250,
-    "p": 5,
-    "c": 42,
-    "f": 8,
-    "category": "Pantry",
-    "vegan": false,
-    "allergens": [],
-    "offers": [
-      {
-        "store": "MagnumGO",
-        "price": 13779,
-        "updated": "2026-09-12T15:25:22.785504+00:00"
-      }
-    ],
-    "source": "https://arzan.kz/ru/astana/p/afb7aea4-3e0e-4cdf-8dee-5b6f90576b38"
   },
   {
     "id": "arzan-f7b66287-432f-4475-92eb-d8fff3ab0d8a",
@@ -28408,31 +27407,6 @@
       }
     ],
     "source": "https://arzan.kz/ru/astana/p/f7b66287-432f-4475-92eb-d8fff3ab0d8a"
-  },
-  {
-    "id": "arzan-ef890c48-24ee-407b-a6ca-c2d94cbe599d",
-    "name": "Стиральный порошок Tide Аквапудра Lenor цветное 4.5кг",
-    "uuid": "ef890c48-24ee-407b-a6ca-c2d94cbe599d",
-    "title": "Стиральный порошок Tide Аквапудра Lenor цветное 4.5кг",
-    "image": "https://s3-pic.e-magnum.kz/item/272646.jpg",
-    "amount": 1000,
-    "unit": "g",
-    "label": "pack",
-    "kcal": 250,
-    "p": 5,
-    "c": 42,
-    "f": 8,
-    "category": "Pantry",
-    "vegan": false,
-    "allergens": [],
-    "offers": [
-      {
-        "store": "MagnumGO",
-        "price": 7065,
-        "updated": "2026-09-12T15:27:40.434583+00:00"
-      }
-    ],
-    "source": "https://arzan.kz/ru/astana/p/ef890c48-24ee-407b-a6ca-c2d94cbe599d"
   },
   {
     "id": "arzan-ee9458b7-3b23-4f33-a515-abbdec84b02d",
@@ -29078,36 +28052,6 @@
       }
     ],
     "source": "https://arzan.kz/ru/astana/p/5cd781cf-eda1-4add-b664-74961908267f"
-  },
-  {
-    "id": "arzan-88bb9e13-3575-4033-9eee-c621e33d6d5f",
-    "name": "Корм влажный Felix говядина с томатами в желе для взрослых к",
-    "uuid": "88bb9e13-3575-4033-9eee-c621e33d6d5f",
-    "title": "Корм влажный Felix говядина с томатами в желе для взрослых кошек 75г",
-    "image": "https://arbuz.kz/image/s3/arbuz-kz-products/file_name__28eadf17-5e02-4af8-b3a7-6b0d8bf38373-8445290141903_jpg.jpg?w=%w&h=%h&_c=1750319684",
-    "amount": 1000,
-    "unit": "g",
-    "label": "pack",
-    "kcal": 165,
-    "p": 20,
-    "c": 2,
-    "f": 8,
-    "category": "Meat",
-    "vegan": false,
-    "allergens": [],
-    "offers": [
-      {
-        "store": "SPAR",
-        "price": 235,
-        "updated": "2026-09-12T16:22:49.702003+00:00"
-      },
-      {
-        "store": "Small",
-        "price": 235,
-        "updated": "2026-09-12T16:20:11.550969+00:00"
-      }
-    ],
-    "source": "https://arzan.kz/ru/astana/p/88bb9e13-3575-4033-9eee-c621e33d6d5f"
   },
   {
     "id": "arzan-77596d87-7914-43b2-8f1e-9b4009e8aaa2",
@@ -30967,46 +29911,6 @@
       }
     ],
     "source": "https://arzan.kz/ru/astana/p/fc2be51d-04ba-49a9-b018-1e2eab9a4ab7"
-  },
-  {
-    "id": "arzan-ebc31929-68c6-4648-806f-a1bc122c9f2b",
-    "name": "Пюре овощное Gerber кабачок и брокколи для первого прикорма ",
-    "uuid": "ebc31929-68c6-4648-806f-a1bc122c9f2b",
-    "title": "Пюре овощное Gerber кабачок и брокколи для первого прикорма с 5 месяцев 125г",
-    "image": "https://arbuz.kz/image/s3/arbuz-kz-products/file_name__5d94956c-2059-4208-a455-7a91effd67ef-8445290925954_pyure_gerber_kabachok_brokkoli_125_g_1_jpg.jpg?w=%w&h=%h&_c=1754382427",
-    "amount": 1000,
-    "unit": "g",
-    "label": "pack",
-    "kcal": 55,
-    "p": 1.5,
-    "c": 11,
-    "f": 0.4,
-    "category": "Produce",
-    "vegan": true,
-    "allergens": [],
-    "offers": [
-      {
-        "store": "Детский Мир",
-        "price": 811,
-        "updated": "2026-09-12T14:52:04.531972+00:00"
-      },
-      {
-        "store": "SPAR",
-        "price": 815,
-        "updated": "2026-09-12T16:27:44.565648+00:00"
-      },
-      {
-        "store": "Small",
-        "price": 815,
-        "updated": "2026-09-12T16:28:05.291936+00:00"
-      },
-      {
-        "store": "Arbuz",
-        "price": 939,
-        "updated": "2026-09-12T13:56:28.839727+00:00"
-      }
-    ],
-    "source": "https://arzan.kz/ru/astana/p/ebc31929-68c6-4648-806f-a1bc122c9f2b"
   },
   {
     "id": "arzan-d4e08376-056a-4747-94b8-bb1bd737e590",
