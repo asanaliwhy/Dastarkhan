@@ -1,0 +1,447 @@
+[
+  {
+    "id": "chicken",
+    "name": "Chicken breast",
+    "uuid": "e53f99e4-b3f7-4a62-8a12-13fc9dd41188",
+    "title": "Филе куриное УКПФ замороженное 1кг",
+    "image": "https://arbuz.kz/image/s3/arbuz-kz-products/file_name__71d2d3a8-8d13-4fc5-8973-5dabd4b79370-2500_jpg.jpg?w=240&h=240&_c=1782112767",
+    "packAmount": 1000,
+    "packLabel": "1000 g",
+    "kcal": 120,
+    "p": 22.5,
+    "c": 0,
+    "f": 2.6,
+    "category": "Meat",
+    "vegan": false,
+    "allergens": [],
+    "unit": "g",
+    "offers": [
+      {
+        "store": "MagnumGO",
+        "price": 2669,
+        "updated": "2026-09-12T15:21:43.674975+00:00"
+      }
+    ],
+    "source": "https://arzan.kz/ru/astana/p/e53f99e4-b3f7-4a62-8a12-13fc9dd41188"
+  },
+  {
+    "id": "oats",
+    "name": "Rolled oats",
+    "uuid": "2f5b71d9-4ae4-412e-bb36-d37653c18dd6",
+    "title": "Хлопья овсяные Алтайская сказка Геркулес 400г",
+    "image": "https://arbuz.kz/image/s3/arbuz-kz-products/241015-hlopya_ovsyanye_gerkules_400_g.jpg?w=240&h=240&_c=1788254513",
+    "packAmount": 400,
+    "packLabel": "400 g",
+    "kcal": 379,
+    "p": 13.2,
+    "c": 67.7,
+    "f": 6.5,
+    "category": "Grains",
+    "vegan": true,
+    "allergens": [
+      "gluten"
+    ],
+    "unit": "g",
+    "offers": [
+      {
+        "store": "Arbuz",
+        "price": 359,
+        "updated": "2026-09-12T14:06:00.128035+00:00"
+      },
+      {
+        "store": "Galmart",
+        "price": 415,
+        "updated": "2026-09-12T16:19:03.713915+00:00"
+      }
+    ],
+    "source": "https://arzan.kz/ru/astana/p/2f5b71d9-4ae4-412e-bb36-d37653c18dd6"
+  },
+  {
+    "id": "rice",
+    "name": "Long-grain rice",
+    "uuid": "ea8a269b-63b0-4d79-b1d3-6f3d2fea0f39",
+    "title": "Рис длиннозерный Asia Rice баракат 1кг",
+    "image": "https://arbuz.kz/image/s3/arbuz-kz-products/file_name__4e5d9d4d-0f0d-4cd7-86c6-68c1b23280fc-331304_jpg.jpg?w=240&h=240&_c=1764140151",
+    "packAmount": 1000,
+    "packLabel": "1000 g",
+    "kcal": 365,
+    "p": 7.1,
+    "c": 80,
+    "f": 0.7,
+    "category": "Grains",
+    "vegan": true,
+    "allergens": [],
+    "unit": "g",
+    "offers": [
+      {
+        "store": "Arbuz",
+        "price": 425,
+        "updated": "2026-09-12T13:51:42.764024+00:00"
+      }
+    ],
+    "source": "https://arzan.kz/ru/astana/p/ea8a269b-63b0-4d79-b1d3-6f3d2fea0f39"
+  },
+  {
+    "id": "buckwheat",
+    "name": "Buckwheat",
+    "uuid": "f9038320-1e26-462d-a2fc-3f96cec127ea",
+    "title": "Крупа гречневая пропаренная Spar 900г",
+    "image": "https://imageproxy.wolt.com/assets/69cb778facd7ec56ada5501c",
+    "packAmount": 900,
+    "packLabel": "900 g",
+    "kcal": 343,
+    "p": 13.3,
+    "c": 71.5,
+    "f": 3.4,
+    "category": "Grains",
+    "vegan": true,
+    "allergens": [],
+    "unit": "g",
+    "offers": [
+      {
+        "store": "SPAR",
+        "price": 460,
+        "updated": "2026-09-12T16:22:00.775070+00:00"
+      }
+    ],
+    "source": "https://arzan.kz/ru/astana/p/f9038320-1e26-462d-a2fc-3f96cec127ea"
+  },
+  {
+    "id": "lentils",
+    "name": "Red lentils",
+    "uuid": "ce9bd23d-4ca4-4f14-ae88-7df0d86b0c87",
+    "title": "Чечевица красная 1кг",
+    "image": "https://arbuz.kz/image/s3/arbuz-kz-products/file_name__823ac3d2-6469-40b8-a5cc-8b2536ac5bf1-201271_2005004010008_sredstvo_mr_muscle_posle_dozhdya_dlya_pola_i_drugih_poverhnostei_750_ml_02_jpg.jpg?w=240&h=240&_c=1786339896",
+    "packAmount": 1000,
+    "packLabel": "1000 g",
+    "kcal": 352,
+    "p": 24.6,
+    "c": 63.4,
+    "f": 1.1,
+    "category": "Legumes",
+    "vegan": true,
+    "allergens": [],
+    "unit": "g",
+    "offers": [
+      {
+        "store": "Arbuz",
+        "price": 595,
+        "updated": "2026-09-12T13:52:32.087921+00:00"
+      }
+    ],
+    "source": "https://arzan.kz/ru/astana/p/ce9bd23d-4ca4-4f14-ae88-7df0d86b0c87"
+  },
+  {
+    "id": "eggs",
+    "name": "Eggs",
+    "uuid": "e85777b5-98cb-4020-8b08-2c0ead7a07da",
+    "title": "Яйцо Курочка Ряба куриное второй категории 30шт",
+    "image": "https://arbuz.kz/image/s3/arbuz-kz-products/file_name__e6768395-8983-4c1b-b8a0-aca50979749b-img_8576_jpg.jpg?w=240&h=240&_c=1736839855",
+    "packAmount": 1350,
+    "packLabel": "30 eggs",
+    "kcal": 143,
+    "p": 12.6,
+    "c": 0.7,
+    "f": 9.5,
+    "category": "Eggs & dairy",
+    "vegan": false,
+    "allergens": [
+      "eggs"
+    ],
+    "unit": "g",
+    "offers": [
+      {
+        "store": "MagnumGO",
+        "price": 1629,
+        "updated": "2026-09-12T15:21:29.551032+00:00"
+      },
+      {
+        "store": "Small",
+        "price": 1935,
+        "updated": "2026-09-12T15:59:37.201243+00:00"
+      },
+      {
+        "store": "Arbuz",
+        "price": 2102,
+        "updated": "2026-09-12T13:51:06.135564+00:00"
+      },
+      {
+        "store": "Galmart",
+        "price": 2121,
+        "updated": "2026-09-12T15:51:18.102044+00:00"
+      }
+    ],
+    "source": "https://arzan.kz/ru/astana/p/e85777b5-98cb-4020-8b08-2c0ead7a07da"
+  },
+  {
+    "id": "tvorog",
+    "name": "Tvorog 5%",
+    "uuid": "c017a07f-8ac0-41ab-9c4a-c7a3ae68c3ea",
+    "title": "Творог Молочный Бидончик 5% 300г",
+    "image": "https://arbuz.kz/image/s3/arbuz-kz-products/file_name__d4cdd93a-3a06-4cc5-8358-9872fa31350c-330007_4870202391215_tvorog_molochnyi_bidonchik_5_300_g_01_jpg.jpg?w=240&h=240&_c=1786295255",
+    "packAmount": 300,
+    "packLabel": "300 g",
+    "kcal": 121,
+    "p": 17,
+    "c": 3,
+    "f": 5,
+    "category": "Eggs & dairy",
+    "vegan": false,
+    "allergens": [
+      "milk"
+    ],
+    "unit": "g",
+    "offers": [
+      {
+        "store": "SPAR",
+        "price": 665,
+        "updated": "2026-09-12T16:11:09.504905+00:00"
+      },
+      {
+        "store": "Small",
+        "price": 665,
+        "updated": "2026-09-12T15:59:39.372348+00:00"
+      },
+      {
+        "store": "MagnumGO",
+        "price": 695,
+        "updated": "2026-09-12T15:23:57.658368+00:00"
+      }
+    ],
+    "source": "https://arzan.kz/ru/astana/p/c017a07f-8ac0-41ab-9c4a-c7a3ae68c3ea"
+  },
+  {
+    "id": "banana",
+    "name": "Banana",
+    "uuid": "080018db-ceba-4910-b2c8-c4d86301b249",
+    "title": "Бананы спелые Эквадор 1кг",
+    "image": "https://arbuz.kz/image/s3/arbuz-kz-products/file_name__29edfaff-9f90-478c-9425-8fab3d7c8145-8l4a7533_jpg.jpg?w=240&h=240&_c=1738238316",
+    "packAmount": 660,
+    "packLabel": "1000 g",
+    "kcal": 89,
+    "p": 1.1,
+    "c": 22.8,
+    "f": 0.3,
+    "category": "Produce",
+    "vegan": true,
+    "allergens": [],
+    "unit": "g",
+    "offers": [
+      {
+        "store": "MagnumGO",
+        "price": 669,
+        "updated": "2026-09-12T15:25:44.528565+00:00"
+      }
+    ],
+    "source": "https://arzan.kz/ru/astana/p/080018db-ceba-4910-b2c8-c4d86301b249"
+  },
+  {
+    "id": "tomato",
+    "name": "Tomato",
+    "uuid": "66541ac2-4d87-4c3a-8c0d-0a18a8d213ca",
+    "title": "Помидоры розовые Казахстан 1кг",
+    "image": "https://arbuz.kz/image/s3/arbuz-kz-products/file_name__3d806996-5d18-446d-b89e-fccc4b270e17-242744-001_jpg.jpg?w=240&h=240&_c=1719394165",
+    "packAmount": 1000,
+    "packLabel": "1000 g",
+    "kcal": 18,
+    "p": 0.9,
+    "c": 3.9,
+    "f": 0.2,
+    "category": "Produce",
+    "vegan": true,
+    "allergens": [],
+    "unit": "g",
+    "offers": [
+      {
+        "store": "MagnumGO",
+        "price": 1099,
+        "updated": "2026-09-12T15:21:33.514387+00:00"
+      },
+      {
+        "store": "SPAR",
+        "price": 1100,
+        "updated": "2026-09-12T16:11:16.956391+00:00"
+      },
+      {
+        "store": "Small",
+        "price": 1150,
+        "updated": "2026-09-12T15:59:55.433208+00:00"
+      },
+      {
+        "store": "Arbuz",
+        "price": 1608,
+        "updated": "2026-09-12T13:45:23.088824+00:00"
+      }
+    ],
+    "source": "https://arzan.kz/ru/astana/p/66541ac2-4d87-4c3a-8c0d-0a18a8d213ca"
+  },
+  {
+    "id": "cucumber",
+    "name": "Cucumber",
+    "uuid": "ec6ed083-f559-4b7a-98ac-67f932a9ec60",
+    "title": "Огурцы Миринда 1кг",
+    "image": "https://arbuz.kz/image/s3/arbuz-kz-products/file_name__6472561b-58e8-4215-91e4-defb802c4433-2045728_jpg.jpg?w=240&h=240&_c=1772624042",
+    "packAmount": 1000,
+    "packLabel": "1000 g",
+    "kcal": 15,
+    "p": 0.7,
+    "c": 3.6,
+    "f": 0.1,
+    "category": "Produce",
+    "vegan": true,
+    "allergens": [],
+    "unit": "g",
+    "offers": [
+      {
+        "store": "SPAR",
+        "price": 438,
+        "updated": "2026-09-12T16:11:16.838414+00:00"
+      },
+      {
+        "store": "Small",
+        "price": 458,
+        "updated": "2026-09-12T15:59:55.181756+00:00"
+      },
+      {
+        "store": "Arbuz",
+        "price": 580,
+        "updated": "2026-09-12T13:52:41.746898+00:00"
+      },
+      {
+        "store": "MagnumGO",
+        "price": 589,
+        "updated": "2026-09-12T15:21:33.335585+00:00"
+      },
+      {
+        "store": "Galmart",
+        "price": 952,
+        "updated": "2026-09-12T15:51:02.858496+00:00"
+      }
+    ],
+    "source": "https://arzan.kz/ru/astana/p/ec6ed083-f559-4b7a-98ac-67f932a9ec60"
+  },
+  {
+    "id": "milk",
+    "name": "Milk 2.5%",
+    "uuid": "6281ab41-dfe8-417b-8518-ca26f761e158",
+    "title": "Молоко Родина пастеризованное 2.5% 1л",
+    "image": "https://arbuz.kz/image/s3/arbuz-kz-products/file_name__9a102a33-4c7e-48bb-ada6-079881e4da5f-4870005730020_1_jpg.jpg?w=240&h=240&_c=1789031686",
+    "packAmount": 1000,
+    "packLabel": "1000 ml",
+    "kcal": 52,
+    "p": 3,
+    "c": 4.7,
+    "f": 2.5,
+    "category": "Eggs & dairy",
+    "vegan": false,
+    "allergens": [
+      "milk"
+    ],
+    "unit": "ml",
+    "offers": [
+      {
+        "store": "Galmart",
+        "price": 513,
+        "updated": "2026-09-12T15:53:05.753055+00:00"
+      },
+      {
+        "store": "Arbuz",
+        "price": 517,
+        "updated": "2026-09-12T13:51:09.211848+00:00"
+      }
+    ],
+    "source": "https://arzan.kz/ru/astana/p/6281ab41-dfe8-417b-8518-ca26f761e158"
+  },
+  {
+    "id": "chickpeas",
+    "name": "Cooked chickpeas",
+    "uuid": "a1270b10-96a2-4109-b786-8a701a95cc0a",
+    "title": "Нут Tat вареный 420г",
+    "image": "https://arbuz.kz/image/s3/arbuz-kz-products/image__337326-nut_tat_var_nyi_420_g.jpg?w=240&h=240&_c=1787733505",
+    "packAmount": 250,
+    "packLabel": "420 g",
+    "kcal": 139,
+    "p": 7,
+    "c": 22,
+    "f": 2.5,
+    "category": "Legumes",
+    "vegan": true,
+    "allergens": [],
+    "unit": "g",
+    "offers": [
+      {
+        "store": "Arbuz",
+        "price": 1285,
+        "updated": "2026-09-12T13:58:51.243305+00:00"
+      }
+    ],
+    "source": "https://arzan.kz/ru/astana/p/a1270b10-96a2-4109-b786-8a701a95cc0a"
+  },
+  {
+    "id": "tuna",
+    "name": "Tuna in water",
+    "uuid": "cc2c9a7e-ed46-44fc-8e2b-379f91ef90e7",
+    "title": "Тунец Celeste натуральный филе 140г",
+    "image": "https://arbuz.kz/image/s3/arbuz-kz-products/image__304687-tunec_celeste_file_naturalnyi_140_g.jpg?w=240&h=240&_c=1783019333",
+    "packAmount": 100,
+    "packLabel": "140 g",
+    "kcal": 116,
+    "p": 25.5,
+    "c": 0,
+    "f": 0.8,
+    "category": "Fish",
+    "vegan": false,
+    "allergens": [
+      "fish"
+    ],
+    "unit": "g",
+    "offers": [
+      {
+        "store": "Galmart",
+        "price": 1460,
+        "updated": "2026-09-12T15:52:12.067300+00:00"
+      }
+    ],
+    "source": "https://arzan.kz/ru/astana/p/cc2c9a7e-ed46-44fc-8e2b-379f91ef90e7"
+  },
+  {
+    "id": "oil",
+    "name": "Sunflower oil",
+    "uuid": "5139dd30-23f0-4da2-b01d-bcddf0aece36",
+    "title": "Масло подсолнечное Маслозавод #1 рафинированное 1л",
+    "image": "https://arbuz.kz/image/s3/arbuz-kz-products/19740-001.jpg?w=240&h=240&_c=1703608947",
+    "packAmount": 1000,
+    "packLabel": "1000 ml",
+    "kcal": 828,
+    "p": 0,
+    "c": 0,
+    "f": 92,
+    "category": "Pantry",
+    "vegan": true,
+    "allergens": [],
+    "unit": "ml",
+    "offers": [
+      {
+        "store": "SPAR",
+        "price": 880,
+        "updated": "2026-09-12T16:09:35.607744+00:00"
+      },
+      {
+        "store": "Small",
+        "price": 880,
+        "updated": "2026-09-12T15:57:25.618212+00:00"
+      },
+      {
+        "store": "MagnumGO",
+        "price": 915,
+        "updated": "2026-09-12T15:21:46.341644+00:00"
+      },
+      {
+        "store": "Galmart",
+        "price": 1013,
+        "updated": "2026-09-12T15:51:23.888123+00:00"
+      }
+    ],
+    "source": "https://arzan.kz/ru/astana/p/5139dd30-23f0-4da2-b01d-bcddf0aece36"
+  }
+]

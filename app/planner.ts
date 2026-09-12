@@ -1,0 +1,50 @@
+import seed from './products.json';
+export type Product=(typeof seed)[number];
+export const initialProducts=seed;
+export type Config={tools:string[];stores:string[];min:number;max:number;diet:string;weight:number;goal:number;height:number;age:number;sex:string;activity:number;allergens:string[];eligible:boolean};
+export const defaults:Config={tools:['Stovetop','Pan','Pot','Cutting board'],stores:['MagnumGO','Small','Arbuz','SPAR','Galmart'],min:15000,max:25000,diet:'Balanced',weight:75,goal:75,height:175,age:28,sex:'male',activity:1.375,allergens:[],eligible:true};
+export const equipment=[['Stovetop',28,56],['Oven',27,72],['Microwave',74,23],['Blender',80,44],['Kettle',63,46],['Cutting board',51,51],['Pan',24,49],['Pot',35,47]] as const;
+export const money=(v:number)=>Math.round(v).toLocaleString('en-US')+' ₸';
+export function target(c:Config){return Math.round(((10*c.weight+6.25*c.height-5*c.age+(c.sex==='male'?5:-161))*c.activity+(c.goal>c.weight?250:c.goal<c.weight?-300:0))/10)*10;}
+export function validate(c:Config){if(!c.stores.length)return 'Select at least one store.';if(c.min<0||c.max<1000||c.max<c.min)return 'Enter a budget range with a maximum of at least 1,000 ₸.';if(!c.eligible||c.age<18||c.age>80)return 'This general adult planner is not suitable for this profile. Browse foods without generating a weight-based plan.';if(![c.weight,c.goal,c.height,c.age,c.activity,c.min,c.max].every(Number.isFinite)||c.weight<40||c.weight>250||c.goal<40||c.goal>250||c.height<130||c.height>220)return 'Check your measurements: 40–250 kg and 130–220 cm.';if(c.goal/(c.height/100)**2<18.5)return 'This goal is outside the adult weight range supported by this planner.';if(target(c)<1500||target(c)>4000)return 'This calorie estimate is outside our supported 1,500–4,000 kcal range. An individual plan is a better fit.';return '';}
+export type Recipe={id:string;name:string;slot:string;tools:string[][];ingredients:[string,number][];steps:string[];minutes:number};
+export const recipes:Recipe[]=[
+{id:'oatmilk',name:'Creamy banana oats',slot:'Breakfast',tools:[['Stovetop','Pot'],['Microwave']],ingredients:[['oats',75],['milk',200],['banana',120]],steps:['Combine oats and milk with a splash of water.','Simmer in a pot for 5–8 minutes, or microwave in a suitable bowl in short intervals until cooked.','Peel and slice the banana over the warm oats.'],minutes:10},
+{id:'vegan-oats',name:'Banana porridge',slot:'Breakfast',tools:[['Stovetop','Pot'],['Microwave']],ingredients:[['oats',90],['banana',150]],steps:['Cover oats with water and simmer 5–8 minutes, or microwave in a suitable bowl until cooked.','Mash in half the banana; top with the rest.'],minutes:10},
+{id:'eggs',name:'Tomato eggs & cucumber',slot:'Breakfast',tools:[['Stovetop','Pan','Cutting board']],ingredients:[['eggs',180],['tomato',200],['cucumber',100],['oil',10]],steps:['Wash and chop the vegetables.','Warm oil and cook tomatoes until softened. Add beaten eggs and cook until fully set.','Serve with cucumber. Egg quantities use an approximate 45 g edible weight per egg.'],minutes:15},
+{id:'tvorog',name:'Banana & tvorog bowl',slot:'Breakfast',tools:[],ingredients:[['tvorog',200],['banana',150]],steps:['Peel the banana and break into pieces.','Serve with chilled tvorog.'],minutes:5},
+{id:'chicken-rice',name:'Chicken & rice bowl',slot:'Main',tools:[['Stovetop','Pot','Pan','Cutting board']],ingredients:[['chicken',190],['rice',100],['tomato',150],['cucumber',100],['oil',15]],steps:['Cook the rice in water according to the packet.','Use a separate clean board for raw chicken. Pan-cook the chicken in oil until it reaches 74°C internally.','Wash and chop vegetables on a cleaned board. Serve together.'],minutes:30},
+{id:'roast',name:'Oven chicken & tomato',slot:'Main',tools:[['Oven','Cutting board']],ingredients:[['chicken',220],['tomato',250],['chickpeas',170],['oil',15]],steps:['Heat oven to 200°C. Place chicken and washed tomato in an oven-safe dish with oil.','Roast until the chicken reaches 74°C internally; time depends on thickness.','Drain the cooked chickpeas and heat through before serving.'],minutes:35},
+{id:'lentil-rice',name:'Red lentil & rice pot',slot:'Main',tools:[['Stovetop','Pot','Cutting board']],ingredients:[['lentils',100],['rice',80],['tomato',180],['oil',15]],steps:['Rinse dry lentils and rice. Wash and chop tomatoes.','Add to a pot with water and simmer until the lentils and rice are tender, following packet cooking times.','Stir in oil and season to taste.'],minutes:30},
+{id:'lentil-buckwheat',name:'Lentil & buckwheat bowl',slot:'Main',tools:[['Stovetop','Pot','Cutting board']],ingredients:[['lentils',100],['buckwheat',80],['cucumber',160],['oil',15]],steps:['Cook rinsed lentils and buckwheat in water according to packet directions.','Wash and dice the cucumber.','Serve together with oil and your preferred seasoning.'],minutes:30},
+{id:'tuna',name:'Tuna & chickpea salad',slot:'Main',tools:[['Cutting board']],ingredients:[['tuna',140],['chickpeas',220],['tomato',200],['cucumber',150],['oil',15]],steps:['Drain tuna and cooked chickpeas.','Wash and dice the vegetables.','Combine with oil and season to taste.'],minutes:10},
+{id:'chickpea',name:'Chickpea garden bowl',slot:'Main',tools:[['Cutting board']],ingredients:[['chickpeas',300],['tomato',200],['cucumber',150],['oil',20]],steps:['Drain the cooked chickpeas.','Wash and chop vegetables.','Mix everything with oil and season to taste.'],minutes:10},
+{id:'snack-tvorog',name:'Tvorog & banana',slot:'Snack',tools:[],ingredients:[['tvorog',180],['banana',100]],steps:['Serve chilled tvorog with peeled banana.'],minutes:3},
+{id:'snack-banana',name:'Fresh banana',slot:'Snack',tools:[],ingredients:[['banana',180]],steps:['Peel and enjoy.'],minutes:1},
+{id:'smoothie',name:'Banana milk smoothie',slot:'Snack',tools:[['Blender']],ingredients:[['banana',180],['milk',250]],steps:['Peel banana and blend with chilled milk.'],minutes:5}
+];
+export function offer(p:Product,stores:string[]){return p.offers.filter(x=>stores.includes(x.store)&&x.price>0).sort((a,b)=>a.price-b.price)[0];}
+export function nutrition(r:Recipe,products:Product[],scale=1){return r.ingredients.reduce((a,[id,g])=>{const p=products.find(x=>x.id===id)!;return {kcal:a.kcal+p.kcal*g/100*scale,p:a.p+p.p*g/100*scale,c:a.c+p.c*g/100*scale,f:a.f+p.f*g/100*scale};},{kcal:0,p:0,c:0,f:0});}
+export type Meal={recipe:Recipe;scale:number};export type Day={meals:Meal[];kcal:number;p:number;c:number;f:number};
+export function groceries(days:Day[],products:Product[],stores:string[]){const amounts:Record<string,number>={};days.forEach(d=>d.meals.forEach(m=>m.recipe.ingredients.forEach(([id,g])=>{amounts[id]=(amounts[id]||0)+g*m.scale})));return Object.entries(amounts).map(([id,amount])=>{const product=products.find(p=>p.id===id)!;const best=offer(product,stores)!;const packs=Math.ceil(amount/product.packAmount);return {product,amount,packs,store:best.store,cost:packs*best.price,price:best.price};});}
+export function buildPlan(c:Config,products:Product[],variant=0){const error=validate(c);if(error)throw new Error(error);const allowed=recipes.filter(r=>(!r.tools.length||r.tools.some(t=>t.every(x=>c.tools.includes(x))))&&r.ingredients.every(([id])=>{const p=products.find(x=>x.id===id)!;return offer(p,c.stores)&&(c.diet!=='Plant-based'||p.vegan)&&(c.diet!=='Vegetarian'||!['Meat','Fish'].includes(p.category))&&!p.allergens.some(a=>c.allergens.includes(a));}));const breakfast=allowed.filter(r=>r.slot==='Breakfast'),main=allowed.filter(r=>r.slot==='Main'),snack=allowed.filter(r=>r.slot==='Snack');if(!breakfast.length||!main.length||!snack.length)throw new Error('No complete plan fits these tools, stores and exclusions yet. Try adding a store or more kitchen tools. We will never silently ignore your selections.');
+const candidates:Day[]=[];
+for(const b of breakfast)for(const l of main)for(const d of main)for(const s of snack){
+ const rs=[b,l,d,s],raw=rs.reduce((a,r)=>a+nutrition(r,products).kcal,0),scale=target(c)/raw;
+ if(scale<.5||scale>2.5)continue;
+ const macros=rs.reduce((a,r)=>{const n=nutrition(r,products,scale);return {kcal:a.kcal+n.kcal,p:a.p+n.p,c:a.c+n.c,f:a.f+n.f};},{kcal:0,p:0,c:0,f:0});
+ candidates.push({meals:rs.map(recipe=>({recipe,scale})),...macros});
+}
+if(!candidates.length)throw new Error('No practical portions fit this combination. Add more foods or tools to broaden the recipes.');
+const usedCost=(day:Day)=>day.meals.reduce((sum,m)=>sum+m.recipe.ingredients.reduce((a,[id,g])=>{const p=products.find(x=>x.id===id)!;return a+g*m.scale/p.packAmount*offer(p,c.stores)!.price},0),0);
+const dayScore=(d:Day)=>usedCost(d)/50+(c.diet==='High protein'?Math.max(0,c.weight*1.6-d.p)*2-d.p/8:0);
+candidates.sort((a,b)=>dayScore(a)-dayScore(b));
+let best:{days:Day[];cost:number;score:number}|null=null,lowest=Infinity;
+const evaluate=(days:Day[])=>{const cost=groceries(days,products,c.stores).reduce((a,g)=>a+g.cost,0);lowest=Math.min(lowest,cost);if(cost>c.max)return;const avgP=days.reduce((a,d)=>a+d.p,0)/7;const unique=new Set(days.flatMap(d=>d.meals.map(m=>m.recipe.id))).size;const repeats=days.filter(d=>d.meals[1].recipe.id===d.meals[2].recipe.id).length;const score=cost/150-unique*18+repeats*8+(c.diet==='High protein'?Math.max(0,c.weight*1.6-avgP)*10-avgP*1.5:0);if(!best||score<best.score)best={days,cost,score}};
+// Include complete repeated-day plans so small budgets can reuse packs efficiently.
+for(const candidate of candidates)evaluate(Array.from({length:7},()=>candidate));
+let rng=7919+variant*104729;const random=()=>{rng=(Math.imul(rng,1664525)+1013904223)>>>0;return rng/4294967296};
+for(let attempt=0;attempt<160;attempt++){const pool=Math.min(candidates.length,8+attempt);evaluate(Array.from({length:7},()=>candidates[Math.floor(random()*pool)]))}
+if(!best)throw new Error(`The lowest basket found is ${money(lowest)}, above your ${money(c.max)} limit. Increase the budget or try more stores; calories were not reduced to force a fit.`);
+return (best as {days:Day[]}).days;}
+
