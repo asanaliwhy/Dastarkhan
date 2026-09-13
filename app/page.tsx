@@ -30,9 +30,24 @@ export default function Home() {
   const [products,setProducts]=useState<Product[]>(initialProducts), [days,setDays]=useState<Day[]>([]), [saved,setSaved]=useState<Config|null>(null);
   const [day,setDay]=useState(0), [error,setError]=useState(''), [recipe,setRecipe]=useState<Meal|null>(null), [busy,setBusy]=useState(false);
   const [planning,setPlanning]=useState(false), [priceStatus,setPriceStatus]=useState('Arzan price snapshot · 12 Sep 2026'), [chat,setChat]=useState(false);
+  const [hydrated,setHydrated]=useState(false);
   const variantRef=useRef(0), workerRef=useRef<Worker|null>(null), busyRef=useRef(false);
   const generationRef=useRef<(()=>Promise<{days:number;calories:number;basket:number}>)|null>(null), cancelRef=useRef<(()=>void)|null>(null);
   useEffect(() => () => workerRef.current?.terminate(),[]);
+  useEffect(()=>{
+    let active=true;
+    const load=async()=>{
+      try{const local=localStorage.getItem('dastarkhan.profile.v1');if(local&&active)setConfig({...defaults,...JSON.parse(local)});}catch{}
+      try{const response=await fetch('/api/profile');const data=await response.json() as {config?:Config|null};if(active&&data.config)setConfig({...defaults,...data.config});}catch{}
+      try{const localPlan=localStorage.getItem('dastarkhan.plan.v1');if(localPlan&&active){const plan=JSON.parse(localPlan) as {config:Config;days:Day[]};if(plan.days?.length===7){setSaved(plan.config);setDays(plan.days);setView(1);}}}catch{}
+      try{const response=await fetch('/api/plans');const data=await response.json() as {plan?:{config:Config;days:Day[]}|null};if(active&&data.plan?.days?.length===7){setSaved(data.plan.config);setDays(data.plan.days);setView(1);}}catch{}
+      try{const response=await fetch('/api/catalog');const data=await response.json() as {products?:Product[]};if(active&&data.products?.length)setProducts(data.products);}catch{}
+      if(active)setHydrated(true);
+    };
+    void load();
+    return()=>{active=false;};
+  },[]);
+  useEffect(()=>{if(!hydrated)return;try{localStorage.setItem('dastarkhan.profile.v1',JSON.stringify(config));}catch{}const timer=window.setTimeout(()=>{void fetch('/api/profile',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({config})}).catch(()=>{});},500);return()=>window.clearTimeout(timer);},[config,hydrated]);
   const update=(patch:Partial<Config>) => {setConfig(c=>({...c,...patch}));setError('');};
   const toggle=(field:'tools'|'stores'|'allergens',name:string) => update({[field]:config[field].includes(name)?config[field].filter(x=>x!==name):[...config[field],name]});
   function navigate(next:number) {setView(next);setError('');window.scrollTo({top:0});}
@@ -48,7 +63,7 @@ export default function Home() {
         const finish=()=>{worker.terminate();workerRef.current=null;cancelRef.current=null;setPlanning(false);};
         cancelRef.current=()=>{finish();reject(new DOMException('Planning cancelled','AbortError'));};
         worker.onmessage=(event:MessageEvent<{days?:Day[];error?:string}>)=>{
-          if(event.data.days){const next=event.data.days;setDays(next);setSaved(snapshot);setDay(0);setView(1);window.scrollTo({top:0});finish();resolve({days:7,calories:target(snapshot),basket:groceries(next,priceSnapshot,snapshot.stores).reduce((sum,g)=>sum+g.cost,0)});}
+          if(event.data.days){const next=event.data.days;const basket=groceries(next,priceSnapshot,snapshot.stores).reduce((sum,g)=>sum+g.cost,0);setDays(next);setSaved(snapshot);setDay(0);setView(1);window.scrollTo({top:0});try{localStorage.setItem('dastarkhan.plan.v1',JSON.stringify({config:snapshot,days:next}));}catch{}void fetch('/api/plans',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({config:snapshot,days:next,basketTotal:basket})}).catch(()=>{});finish();resolve({days:7,calories:target(snapshot),basket});}
           else{finish();reject(new Error(event.data.error||'Unable to build a plan. Please try again.'));}
         };
         worker.onerror=()=>{finish();reject(new Error('The planner could not start. Reload the page and try again.'));};
@@ -63,7 +78,7 @@ export default function Home() {
     const ctx=(document as Document & {modelContext?:{registerTool?:Function}}).modelContext;if(!ctx?.registerTool)return;const lifecycle=new AbortController();
     try{Promise.resolve(ctx.registerTool({name:'generate_meal_plan',title:'Generate a seven-day meal plan',description:'Generate and display a new seven-day plan using the current kitchen, budget, stores and food preferences. Replaces the existing plan.',inputSchema:{type:'object',properties:{},additionalProperties:false},annotations:{readOnlyHint:false,untrustedContentHint:false},execute:async(input:unknown)=>{if(!input||typeof input!=='object'||Object.keys(input).length)throw new Error('Expected an empty object.');if(!generationRef.current)throw new Error('Planner is initializing.');return generationRef.current();}},{signal:lifecycle.signal})).catch(()=>{});}catch{}return()=>lifecycle.abort();
   },[]);
-  async function refresh(){if(workerRef.current||busyRef.current)return;busyRef.current=true;setBusy(true);try{const r=await fetch('/api/prices');if(!r.ok)throw new Error();const d=await r.json() as {products:Product[];refreshed:number;total:number};setProducts(d.products);setPriceStatus(`${d.refreshed} core products refreshed · remaining prices from snapshot`);setDays([]);setSaved(null);}catch{setPriceStatus('Arzan unavailable · using 12 Sep 2026 snapshot');}finally{busyRef.current=false;setBusy(false);}}
+  async function refresh(){if(workerRef.current||busyRef.current)return;busyRef.current=true;setBusy(true);try{const r=await fetch('/api/prices');if(!r.ok)throw new Error();const d=await r.json() as {products:Product[];refreshed:number;total:number;persisted?:boolean};setProducts(d.products);setPriceStatus(`${d.refreshed} core products refreshed · ${d.persisted?'catalog synced to your account':'remaining prices from snapshot'}`);setDays([]);setSaved(null);try{localStorage.removeItem('dastarkhan.plan.v1');}catch{}}catch{setPriceStatus('Arzan unavailable · using 12 Sep 2026 snapshot');}finally{busyRef.current=false;setBusy(false);}}
   const total=days.length&&saved?groceries(days,products,saved.stores).reduce((s,g)=>s+g.cost,0):0;
   return <div className="app-shell"><a className="skip-link" href="#main-content">Skip to content</a>
     <aside className="sidebar"><a className="brand" href="/" aria-label="Dastarkhan home"><span className="brand-mark"><Utensils size={21}/></span><span>dastarkhan<span className="brand-dot">.</span></span></a><p className="brand-caption">A good week starts here.</p>

@@ -1,3 +1,5 @@
+import { getOptionalDb } from '../../../db';
+import { productOffers, products as productRows } from '../../../db/schema';
 import {initialProducts, Product} from '../../planner';
 type JsonObject=Record<string,unknown>;
 const isObject=(value:unknown):value is JsonObject=>typeof value==='object'&&value!==null&&!Array.isArray(value);
@@ -17,5 +19,14 @@ export async function GET(){
  }));
  const refreshedByUuid=new Map(results.map((result,index)=>[refreshable[index].uuid,result.status==='fulfilled'?result.value:refreshable[index]]));
  const products=initialProducts.map(product=>refreshedByUuid.get(product.uuid)??product);
- return Response.json({products,refreshed:results.filter(result=>result.status==='fulfilled').length,total:refreshable.length,checkedAt:new Date().toISOString()},{headers:{'Cache-Control':'public, max-age=300'}});
+ const db=getOptionalDb();
+ if(db){
+  for(const product of products){
+   await db.insert(productRows).values({id:product.id,uuid:product.uuid,name:product.name,title:product.title,image:product.image,packAmount:product.packAmount,packLabel:product.packLabel,kcal:product.kcal,protein:product.p,carbs:product.c,fat:product.f,category:product.category,vegan:product.vegan,allergens:JSON.stringify(product.allergens),unit:product.unit,source:product.source,updatedAt:new Date().toISOString()}).onConflictDoUpdate({target:productRows.id,set:{uuid:product.uuid,name:product.name,title:product.title,image:product.image,packAmount:product.packAmount,packLabel:product.packLabel,kcal:product.kcal,protein:product.p,carbs:product.c,fat:product.f,category:product.category,vegan:product.vegan,allergens:JSON.stringify(product.allergens),unit:product.unit,source:product.source,updatedAt:new Date().toISOString()}});
+   for(const offer of product.offers){
+    await db.insert(productOffers).values({productId:product.id,store:offer.store,price:Math.round(offer.price),inStock:true,updatedAt:offer.updated}).onConflictDoUpdate({target:[productOffers.productId,productOffers.store],set:{price:Math.round(offer.price),inStock:true,updatedAt:offer.updated}});
+   }
+  }
+ }
+ return Response.json({products,refreshed:results.filter(result=>result.status==='fulfilled').length,total:refreshable.length,checkedAt:new Date().toISOString(),persisted:!!db},{headers:{'Cache-Control':'public, max-age=300'}});
 }
