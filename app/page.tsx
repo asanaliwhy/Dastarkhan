@@ -5,11 +5,9 @@ import {Config, Product, Day, Meal, defaults, equipment, initialProducts, money,
 import PlannerWorker from './planner-worker.ts?worker';
 import {Preferences, PlanViews, Catalog, RecipeModal, ChatGuide} from './views';
 import {Button} from '@/components/ui/button';
+import {Locale, messages} from './i18n';
 
-const tabs = ['Build my plan', 'My meal plan', 'Grocery list', 'Food database'];
-const shortTabs = ['Planner', 'My week', 'Groceries', 'Explore'];
 const icons = [ChefHat, CalendarDays, ShoppingBasket, Sprout];
-const steps = ['Your kitchen', 'Budget & stores', 'Food & goals'];
 
 function Kitchen({config, toggle}: {config: Config; toggle: (name: string) => void}) {
   return <section className="kitchen-card">
@@ -31,13 +29,15 @@ export default function Home() {
   const [day,setDay]=useState(0), [error,setError]=useState(''), [recipe,setRecipe]=useState<Meal|null>(null), [busy,setBusy]=useState(false);
   const [planning,setPlanning]=useState(false), [priceStatus,setPriceStatus]=useState('Arzan price snapshot · 12 Sep 2026'), [chat,setChat]=useState(false);
   const [hydrated,setHydrated]=useState(false);
+  const [language,setLanguage]=useState<Locale>('en');
+  const copy=messages[language], tabs=copy.tabs;
   const variantRef=useRef(0), workerRef=useRef<Worker|null>(null), busyRef=useRef(false);
   const generationRef=useRef<(()=>Promise<{days:number;calories:number;basket:number}>)|null>(null), cancelRef=useRef<(()=>void)|null>(null);
   useEffect(() => () => workerRef.current?.terminate(),[]);
   useEffect(()=>{
     let active=true;
     const load=async()=>{
-      try{const local=localStorage.getItem('dastarkhan.profile.v1');if(local&&active)setConfig({...defaults,...JSON.parse(local)});}catch{}
+      try{const localLanguage=localStorage.getItem('dastarkhan.locale.v1') as Locale|null;if(localLanguage&&messages[localLanguage]&&active)setLanguage(localLanguage);const local=localStorage.getItem('dastarkhan.profile.v1');if(local&&active)setConfig({...defaults,...JSON.parse(local)});}catch{}
       try{const response=await fetch('/api/profile');const data=await response.json() as {config?:Config|null};if(active&&data.config)setConfig({...defaults,...data.config});}catch{}
       try{const localPlan=localStorage.getItem('dastarkhan.plan.v1');if(localPlan&&active){const plan=JSON.parse(localPlan) as {config:Config;days:Day[]};if(plan.days?.length===7){setSaved(plan.config);setDays(plan.days);setView(1);}}}catch{}
       try{const response=await fetch('/api/plans');const data=await response.json() as {plan?:{config:Config;days:Day[]}|null};if(active&&data.plan?.days?.length===7){setSaved(data.plan.config);setDays(data.plan.days);setView(1);}}catch{}
@@ -47,6 +47,7 @@ export default function Home() {
     void load();
     return()=>{active=false;};
   },[]);
+  useEffect(()=>{document.documentElement.lang=language;try{localStorage.setItem('dastarkhan.locale.v1',language);}catch{}},[language]);
   useEffect(()=>{if(!hydrated)return;try{localStorage.setItem('dastarkhan.profile.v1',JSON.stringify(config));}catch{}const timer=window.setTimeout(()=>{void fetch('/api/profile',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({config})}).catch(()=>{});},500);return()=>window.clearTimeout(timer);},[config,hydrated]);
   const update=(patch:Partial<Config>) => {setConfig(c=>({...c,...patch}));setError('');};
   const toggle=(field:'tools'|'stores'|'allergens',name:string) => update({[field]:config[field].includes(name)?config[field].filter(x=>x!==name):[...config[field],name]});
@@ -82,14 +83,14 @@ export default function Home() {
   const total=days.length&&saved?groceries(days,products,saved.stores).reduce((s,g)=>s+g.cost,0):0;
   return <div className="app-shell"><a className="skip-link" href="#main-content">Skip to content</a>
     <aside className="sidebar"><a className="brand" href="/" aria-label="Dastarkhan home"><span className="brand-mark"><Utensils size={21}/></span><span>dastarkhan<span className="brand-dot">.</span></span></a><p className="brand-caption">A good week starts here.</p>
-      <nav aria-label="Main navigation">{tabs.map((name,i)=>{const Icon=icons[i];return <button key={name} aria-label={name} aria-current={view===i?'page':undefined} onClick={()=>navigate(i)} className={view===i?'nav-active':''}><Icon size={20}/><span className="nav-full">{name}</span><span className="nav-short">{shortTabs[i]}</span>{view===i&&<ChevronRight className="nav-arrow" size={15}/>}</button>;})}</nav>
+      <nav aria-label="Main navigation">{tabs.map((name,i)=>{const Icon=icons[i];return <button key={name} aria-label={name} aria-current={view===i?'page':undefined} onClick={()=>navigate(i)} className={view===i?'nav-active':''}><Icon size={20}/><span className="nav-full">{name}</span><span className="nav-short">{copy.shortTabs[i]}</span>{view===i&&<ChevronRight className="nav-arrow" size={15}/>}</button>;})}</nav>
       <div className="sidebar-bottom"><div className="sidebar-note"><Sprout size={24}/><h3>Less deciding.<br/>More enjoying.</h3><p>Meals that work with your kitchen and your budget.</p><button onClick={()=>setChat(true)}>Meet your meal guide <ArrowRight size={15}/></button></div><div className="profile"><span>N</span><div>My workspace<small>One person · metric units</small></div></div></div>
     </aside>
-    <div className="main-shell"><header className="app-header"><span className="breadcrumb">Your workspace <ChevronRight size={14}/><b>{tabs[view]}</b></span><div className="header-actions"><span className="location"><MapPin size={15}/>Astana, KZ</span><button className="help-button" onClick={()=>setChat(true)} aria-label="Ask meal guide"><MessageCircle size={19}/></button></div></header>
-      <main id="main-content"><div className="intro"><div><h1>{['Eat well. Make it yours.','Your week, on the menu.','Everything for your week.','Find your everyday favorites.'][view]}</h1><p>{['A week of meals, built around your kitchen, budget and goals.','Four meals a day. One less thing to think about.','A store-by-store checklist, with whole packs and estimated prices.','Explore Astana’s groceries and compare nutrition estimates.'][view]}</p></div><span className="weekly-chip"><CalendarDays size={18}/><span>7 days<small>Planned for you</small></span></span></div>
+    <div className="main-shell"><header className="app-header"><span className="breadcrumb">Your workspace <ChevronRight size={14}/><b>{tabs[view]}</b></span><div className="header-actions"><label className="language-picker"><span className="sr-only">Language</span><select value={language} onChange={event=>setLanguage(event.target.value as Locale)} aria-label="Language"><option value="en">EN</option><option value="ru">RU</option><option value="kk">KZ</option></select></label><span className="location"><MapPin size={15}/>Astana, KZ</span><button className="help-button" onClick={()=>setChat(true)} aria-label="Ask meal guide"><MessageCircle size={19}/></button></div></header>
+      <main id="main-content"><div className="intro"><div><h1>{copy.introTitles[view]}</h1><p>{copy.introDescriptions[view]}</p></div><span className="weekly-chip"><CalendarDays size={18}/><span>{copy.weekly}<small>{copy.planned}</small></span></span></div>
         {error&&<div role="alert" className="notice warning">{error}</div>}
         {planning&&<div className="planning-status" role="status"><LoaderCircle className="spin" size={20}/><div><b>Finding your week’s meals…</b><span>Matching recipes, portions and prices to your selections.</span></div><button className="secondary" onClick={()=>cancelRef.current?.()}>Cancel</button></div>}
-        {view===0&&<><div className="steps" aria-label="Plan setup">{steps.map((name,i)=><button key={name} disabled={planning} aria-current={i===step?'step':undefined} onClick={()=>goStep(i)} className={'step '+(i===step?'active':i<step?'complete':'')}><span className="step-number">{i<step?<Check size={16}/>:i+1}</span><span><b>{name}</b><small>{['Start with what you have','Choose your weekly spend','Tell us what feels right'][i]}</small></span></button>)}</div>
+        {view===0&&<><div className="steps" aria-label="Plan setup">{copy.steps.map((name,i)=><button key={name} disabled={planning} aria-current={i===step?'step':undefined} onClick={()=>goStep(i)} className={'step '+(i===step?'active':i<step?'complete':'')}><span className="step-number">{i<step?<Check size={16}/>:i+1}</span><span><b>{name}</b><small>{copy.stepHints[i]}</small></span></button>)}</div>
           <div className="builder-grid"><div className="builder-content" key={step}>{step===0?<Kitchen config={config} toggle={name=>toggle('tools',name)}/>:<Preferences step={step} config={config} products={products} update={update} toggle={toggle} refresh={refresh} busy={busy||planning} priceStatus={priceStatus}/>}</div>
             <aside className="plan-summary"><div className="summary-heading"><span className="summary-symbol"><Utensils size={22}/></span><div><h2>Your week is taking shape.</h2><p>7 days · 1 person</p></div></div>
               <div className="summary-line"><Wallet size={18}/><span>Weekly budget<small>Up to {money(config.max)}</small></span><button aria-label="Edit budget" onClick={()=>goStep(1)}>Edit</button></div>
