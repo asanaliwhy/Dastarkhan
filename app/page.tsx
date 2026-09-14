@@ -1,8 +1,10 @@
 "use client";
 import {useState, useEffect, useRef} from 'react';
 import {ChefHat, Check, Plus, ArrowRight, ArrowLeft, MapPin, Wallet, Utensils, CalendarDays, ShoppingBasket, Sprout, Flame, ExternalLink, MessageCircle, ChevronRight, LoaderCircle} from 'lucide-react';
-import {Config, Product, Day, Meal, defaults, equipment, initialProducts, money, target, validate, groceries} from './planner';
-import PlannerWorker from './planner-worker.ts?worker';
+import {Config, Product, Day, Meal, defaults, equipment, initialProducts, money, target, validate, groceries, restorePlan} from './planner';
+import { configSchema, catalogSchema } from './validation';
+import { normalizeProduct } from './catalog-data';
+import createPlannerWorker from './worker-factory';
 import {Preferences, PlanViews, Catalog, RecipeModal, ChatGuide} from './views';
 import {Button} from '@/components/ui/button';
 import {Locale, messages} from './i18n';
@@ -29,42 +31,55 @@ export default function Home() {
   const [day,setDay]=useState(0), [error,setError]=useState(''), [recipe,setRecipe]=useState<Meal|null>(null), [busy,setBusy]=useState(false);
   const [planning,setPlanning]=useState(false), [priceStatus,setPriceStatus]=useState('Arzan price snapshot · 12 Sep 2026'), [chat,setChat]=useState(false);
   const [hydrated,setHydrated]=useState(false);
+  const [cloudSync,setCloudSync]=useState(false);
   const [language,setLanguage]=useState<Locale>('en');
   const copy=messages[language], tabs=copy.tabs;
   const variantRef=useRef(0), workerRef=useRef<Worker|null>(null), busyRef=useRef(false);
+  const editedRef=useRef(false);
   const generationRef=useRef<(()=>Promise<{days:number;calories:number;basket:number}>)|null>(null), cancelRef=useRef<(()=>void)|null>(null);
   useEffect(() => () => workerRef.current?.terminate(),[]);
   useEffect(()=>{
     let active=true;
     const load=async()=>{
-      try{const localLanguage=localStorage.getItem('dastarkhan.locale.v1') as Locale|null;if(localLanguage&&messages[localLanguage]&&active)setLanguage(localLanguage);const local=localStorage.getItem('dastarkhan.profile.v1');if(local&&active)setConfig({...defaults,...JSON.parse(local)});}catch{}
-      try{const response=await fetch('/api/profile');const data=await response.json() as {config?:Config|null};if(active&&data.config)setConfig({...defaults,...data.config});}catch{}
-      try{const localPlan=localStorage.getItem('dastarkhan.plan.v1');if(localPlan&&active){const plan=JSON.parse(localPlan) as {config:Config;days:Day[]};if(plan.days?.length===7){setSaved(plan.config);setDays(plan.days);setView(1);}}}catch{}
-      try{const response=await fetch('/api/plans');const data=await response.json() as {plan?:{config:Config;days:Day[]}|null};if(active&&data.plan?.days?.length===7){setSaved(data.plan.config);setDays(data.plan.days);setView(1);}}catch{}
-      try{const response=await fetch('/api/catalog');const data=await response.json() as {products?:Product[]};if(active&&data.products?.length)setProducts(data.products);}catch{}
+      try{const localLanguage=localStorage.getItem('dastarkhan.locale.v1');if(localLanguage&&['en','ru','kk'].includes(localLanguage)&&active)setLanguage(localLanguage as Locale);const local=localStorage.getItem('dastarkhan.profile.v1');const parsed=configSchema.safeParse(local?JSON.parse(local):null);if(parsed.success&&active)setConfig(parsed.data);}catch{}
+      let localPlan:unknown=null;
+      try{localPlan=JSON.parse(localStorage.getItem('dastarkhan.plan.v1')??'null');}catch{}
+      const [profile,remotePlan,catalog]=await Promise.all(['/api/profile','/api/plans','/api/catalog'].map(async url=>{try{const response=await fetch(url,{signal:AbortSignal.timeout(8000)});return response.ok?await response.json() as {persisted?:boolean;config?:unknown;plan?:unknown;products?:unknown}:null;}catch{return null;}}));
+      if(!active)return;
+      setCloudSync(profile?.persisted===true);
+      const parsed=configSchema.safeParse(profile?.config);
+      if(parsed.success&&!editedRef.current)setConfig(parsed.data);
+      const parsedCatalog=catalogSchema.safeParse(catalog?.products);
+      const loadedProducts=parsedCatalog.success?parsedCatalog.data.map(normalizeProduct):initialProducts;
+      setProducts(loadedProducts);
+      // Restore canonical recipes, never cooking instructions from persisted JSON.
+      const plan=restorePlan(remotePlan?.plan,loadedProducts)??restorePlan(localPlan,loadedProducts);
+      if(plan&&!editedRef.current){setSaved(plan.config);setDays(plan.days);setView(1);}
+      else if((localPlan||remotePlan?.plan)&&!plan)setError('Your saved plan needs updating for the current recipes and store offers. Build a new plan; your preferences are still available.');
       if(active)setHydrated(true);
     };
     void load();
     return()=>{active=false;};
   },[]);
   useEffect(()=>{document.documentElement.lang=language;try{localStorage.setItem('dastarkhan.locale.v1',language);}catch{}},[language]);
-  useEffect(()=>{if(!hydrated)return;try{localStorage.setItem('dastarkhan.profile.v1',JSON.stringify(config));}catch{}const timer=window.setTimeout(()=>{void fetch('/api/profile',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({config})}).catch(()=>{});},500);return()=>window.clearTimeout(timer);},[config,hydrated]);
-  const update=(patch:Partial<Config>) => {setConfig(c=>({...c,...patch}));setError('');};
+  useEffect(()=>{if(!hydrated)return;try{localStorage.setItem('dastarkhan.profile.v1',JSON.stringify(config));}catch{}if(!cloudSync)return;const timer=window.setTimeout(()=>{void fetch('/api/profile',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({config})}).catch(()=>{});},500);return()=>window.clearTimeout(timer);},[config,hydrated,cloudSync]);
+  const update=(patch:Partial<Config>) => {editedRef.current=true;setConfig(c=>({...c,...patch}));setError('');};
   const toggle=(field:'tools'|'stores'|'allergens',name:string) => update({[field]:config[field].includes(name)?config[field].filter(x=>x!==name):[...config[field],name]});
   function navigate(next:number) {setView(next);setError('');window.scrollTo({top:0});}
   function goStep(next:number) {setStep(next);setError('');window.scrollTo({top:0});}
   async function generatePlan() {
+    if(!hydrated)throw new Error('Your saved preferences are still loading. Try again in a moment.');
     if(workerRef.current||busyRef.current)throw new Error('Please wait for the current operation to finish.');
     const issue=validate(config);if(issue)throw new Error(issue);
     const snapshot=structuredClone(config), priceSnapshot=products;
     setPlanning(true);setError('');
     return new Promise<{days:number;calories:number;basket:number}>((resolve,reject)=>{
       try{
-        const worker=new PlannerWorker();workerRef.current=worker;
+        const worker=createPlannerWorker();workerRef.current=worker;
         const finish=()=>{worker.terminate();workerRef.current=null;cancelRef.current=null;setPlanning(false);};
         cancelRef.current=()=>{finish();reject(new DOMException('Planning cancelled','AbortError'));};
         worker.onmessage=(event:MessageEvent<{days?:Day[];error?:string}>)=>{
-          if(event.data.days){const next=event.data.days;const basket=groceries(next,priceSnapshot,snapshot.stores).reduce((sum,g)=>sum+g.cost,0);setDays(next);setSaved(snapshot);setDay(0);setView(1);window.scrollTo({top:0});try{localStorage.setItem('dastarkhan.plan.v1',JSON.stringify({config:snapshot,days:next}));}catch{}void fetch('/api/plans',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({config:snapshot,days:next,basketTotal:basket})}).catch(()=>{});finish();resolve({days:7,calories:target(snapshot),basket});}
+          if(event.data.days){try{const next=event.data.days;const basket=groceries(next,priceSnapshot,snapshot.stores).reduce((sum,g)=>sum+g.cost,0);setDays(next);setSaved(snapshot);setDay(0);setView(1);window.scrollTo({top:0});try{localStorage.setItem('dastarkhan.plan.v1',JSON.stringify({config:snapshot,days:next}));}catch{setError('Your plan is ready, but device storage is unavailable. Keep this page open to retain it.');}if(cloudSync)void fetch('/api/plans',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({config:snapshot,days:next,basketTotal:basket})}).catch(()=>{});finish();resolve({days:7,calories:target(snapshot),basket});}catch(reason){finish();reject(reason);}}
           else{finish();reject(new Error(event.data.error||'Unable to build a plan. Please try again.'));}
         };
         worker.onerror=()=>{finish();reject(new Error('The planner could not start. Reload the page and try again.'));};
@@ -79,12 +94,12 @@ export default function Home() {
     const ctx=(document as Document & {modelContext?:{registerTool?:Function}}).modelContext;if(!ctx?.registerTool)return;const lifecycle=new AbortController();
     try{Promise.resolve(ctx.registerTool({name:'generate_meal_plan',title:'Generate a seven-day meal plan',description:'Generate and display a new seven-day plan using the current kitchen, budget, stores and food preferences. Replaces the existing plan.',inputSchema:{type:'object',properties:{},additionalProperties:false},annotations:{readOnlyHint:false,untrustedContentHint:false},execute:async(input:unknown)=>{if(!input||typeof input!=='object'||Object.keys(input).length)throw new Error('Expected an empty object.');if(!generationRef.current)throw new Error('Planner is initializing.');return generationRef.current();}},{signal:lifecycle.signal})).catch(()=>{});}catch{}return()=>lifecycle.abort();
   },[]);
-  async function refresh(){if(workerRef.current||busyRef.current)return;busyRef.current=true;setBusy(true);try{const r=await fetch('/api/prices');if(!r.ok)throw new Error();const d=await r.json() as {products:Product[];refreshed:number;total:number;persisted?:boolean};setProducts(d.products);setPriceStatus(`${d.refreshed} core products refreshed · ${d.persisted?'catalog synced to your account':'remaining prices from snapshot'}`);setDays([]);setSaved(null);try{localStorage.removeItem('dastarkhan.plan.v1');}catch{}}catch{setPriceStatus('Arzan unavailable · using 12 Sep 2026 snapshot');}finally{busyRef.current=false;setBusy(false);}}
+  async function refresh(){if(workerRef.current||busyRef.current||!hydrated)return;busyRef.current=true;setBusy(true);try{const r=await fetch('/api/prices',{signal:AbortSignal.timeout(25000)});if(!r.ok)throw new Error();const d=await r.json() as {products:Product[];refreshed:number;total:number;persisted?:boolean};const next=catalogSchema.parse(d.products).map(normalizeProduct);setProducts(next);setPriceStatus(`${d.refreshed} core products refreshed · ${d.persisted?'catalog saved to database':'remaining prices from snapshot'}`);if(saved&&days.length){const restored=restorePlan({config:saved,days},next);if(restored){setDays(restored.days);}else{setDays([]);setSaved(null);setError('Some ingredients in your plan are no longer available at your stores. Generate a new combination with the refreshed offers.');try{localStorage.removeItem('dastarkhan.plan.v1');}catch{}}}}catch{setPriceStatus('Price refresh unavailable · keeping your current catalog');}finally{busyRef.current=false;setBusy(false);}}
   const total=days.length&&saved?groceries(days,products,saved.stores).reduce((s,g)=>s+g.cost,0):0;
   return <div className="app-shell"><a className="skip-link" href="#main-content">Skip to content</a>
     <aside className="sidebar"><a className="brand" href="/" aria-label="Dastarkhan home"><span className="brand-mark"><Utensils size={21}/></span><span>dastarkhan<span className="brand-dot">.</span></span></a><p className="brand-caption">A good week starts here.</p>
       <nav aria-label="Main navigation">{tabs.map((name,i)=>{const Icon=icons[i];return <button key={name} aria-label={name} aria-current={view===i?'page':undefined} onClick={()=>navigate(i)} className={view===i?'nav-active':''}><Icon size={20}/><span className="nav-full">{name}</span><span className="nav-short">{copy.shortTabs[i]}</span>{view===i&&<ChevronRight className="nav-arrow" size={15}/>}</button>;})}</nav>
-      <div className="sidebar-bottom"><div className="sidebar-note"><Sprout size={24}/><h3>Less deciding.<br/>More enjoying.</h3><p>Meals that work with your kitchen and your budget.</p><button onClick={()=>setChat(true)}>Meet your meal guide <ArrowRight size={15}/></button></div><div className="profile"><span>N</span><div>My workspace<small>One person · metric units</small></div></div></div>
+      <div className="sidebar-bottom"><div className="sidebar-note"><Sprout size={24}/><h3>Less deciding.<br/>More enjoying.</h3><p>Meals that work with your kitchen and your budget.</p><button onClick={()=>setChat(true)}>Meet your meal guide <ArrowRight size={15}/></button></div><div className="profile"><span>N</span><div>My workspace<small>{cloudSync?'Account sync available':'Saved on this device'}</small></div></div></div>
     </aside>
     <div className="main-shell"><header className="app-header"><span className="breadcrumb">Your workspace <ChevronRight size={14}/><b>{tabs[view]}</b></span><div className="header-actions"><label className="language-picker"><span className="sr-only">Language</span><select value={language} onChange={event=>setLanguage(event.target.value as Locale)} aria-label="Language"><option value="en">EN</option><option value="ru">RU</option><option value="kk">KZ</option></select></label><span className="location"><MapPin size={15}/>Astana, KZ</span><button className="help-button" onClick={()=>setChat(true)} aria-label="Ask meal guide"><MessageCircle size={19}/></button></div></header>
       <main id="main-content"><div className="intro"><div><h1>{copy.introTitles[view]}</h1><p>{copy.introDescriptions[view]}</p></div><span className="weekly-chip"><CalendarDays size={18}/><span>{copy.weekly}<small>{copy.planned}</small></span></span></div>
@@ -99,7 +114,7 @@ export default function Home() {
               <div className="summary-line"><Sprout size={18}/><span>Eating style<small>{config.diet}</small></span><button aria-label="Edit eating style" onClick={()=>goStep(2)}>Edit</button></div>
               {step===2&&!validate(config)&&<div className="calorie-preview"><Flame size={18}/><span>Daily estimate</span><b>{target(config)} <small>kcal</small></b></div>}
               <div className="summary-note"><p>{step===0?'Your recipes will only use the equipment you select.':step===1?'We compare offers at your selected stores. Delivery and seasonings are extra.':'Portions follow your calorie estimate. Nutrition values are approximate.'}</p></div>
-              <div className="builder-actions"><Button className="primary" disabled={planning||busy} onClick={nextStep}>{planning?'Building your plan…':step===0?'Continue to budget':step===1?'Continue to your goals':'Build my meal plan'}{planning?<LoaderCircle className="spin" size={17}/>:<ArrowRight size={17}/>}</Button>{step>0&&<button className="back-button" disabled={planning} onClick={()=>goStep(step-1)}><ArrowLeft size={14}/>Previous step</button>}</div><small className="center-note">Step {step+1} of 3 · Settings stay in this session</small>
+              <div className="builder-actions"><Button className="primary" disabled={planning||busy} onClick={nextStep}>{planning?'Building your plan…':step===0?'Continue to budget':step===1?'Continue to your goals':'Build my meal plan'}{planning?<LoaderCircle className="spin" size={17}/>:<ArrowRight size={17}/>}</Button>{step>0&&<button className="back-button" disabled={planning} onClick={()=>goStep(step-1)}><ArrowLeft size={14}/>Previous step</button>}</div><small className="center-note">Step {step+1} of 3 · {cloudSync?'Account sync available':'Saved on this device'}</small>
             </aside>
           </div></>}
         {(view===1||view===2)&&!days.length&&<div className="empty content-card"><span className="empty-icon"><ChefHat size={36}/></span><h2>A well-fed week awaits.</h2><p>Choose your kitchen tools, set a budget, and tell us what you like. We’ll put it all on the menu.</p><Button className="primary auto-width" onClick={()=>{navigate(0);goStep(0);}}>Create my first plan <ArrowRight size={17}/></Button></div>}

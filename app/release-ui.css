@@ -1,0 +1,21 @@
+.pantry-panel{margin:0 0 24px;padding:20px;background:var(--canvas)}
+.pantry-panel>summary{font-size:17px;color:var(--green)}
+.pantry-panel>summary>span{display:block;font-size:12px;color:var(--muted);margin-top:4px}
+.pantry-panel details summary svg{display:inline;vertical-align:middle;margin-right:6px}
+.pantry-search label,.barcode-controls label{display:flex;flex-direction:column;gap:6px;font-size:13px}
+.pantry-panel input:not([type=file]){background:white;border:1px solid var(--line);padding:12px;border-radius:8px;min-height:44px;width:100%;min-width:0}
+.pantry-panel ul{list-style:none;padding:0}.pantry-panel li{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.pantry-matches li>span,.pantry-owned label{flex:1;min-width:0;overflow-wrap:anywhere}
+.pantry-owned label>span{display:flex;align-items:center;gap:10px;margin-top:8px}.pantry-owned input{max-width:140px}
+.barcode-controls{display:flex;align-items:end;gap:12px;flex-wrap:wrap}.barcode-controls>label:first-child{flex:1}
+.barcode-controls input[type=file]{width:160px;font-size:12px}
+.offer-list small{display:block;color:var(--muted);font-size:12px}.offer-list+p{margin:16px 0}
+button.product-card{text-align:left;color:var(--ink);width:100%}
+.guide-dialog{width:580px;max-width:calc(100vw - 24px);max-height:90dvh;padding:24px;display:flex;flex-direction:column;gap:12px;background:var(--surface);color:var(--ink)}
+.guide-messages{min-height:100px;max-height:48dvh;overflow:auto;padding:4px 8px 4px 0}
+.guide-message{margin:0 0 16px}.guide-message>small{font-size:11px;color:var(--green);font-weight:600}
+.guide-message p{white-space:pre-wrap;background:var(--canvas);padding:14px;border-radius:10px;font-size:14px;margin-top:6px}
+.guide-message.user{margin-left:32px}.guide-message.user p{background:var(--selected)}.guide-message details{font-size:12px;padding:10px;margin-top:4px}.guide-message ul{padding-left:20px}
+.ai-opt-in{display:flex;align-items:start;gap:8px;font-size:12px;line-height:1.5;color:var(--muted)}
+.guide-dialog .suggestions,.guide-dialog .chat-input{padding:8px 0}.guide-dialog .chat-input input{min-height:44px}
+@media(max-width:520px){.app-header{flex-wrap:wrap}.header-actions{margin-left:auto}.pantry-panel{padding:14px}.pantry-matches .secondary{padding:10px;font-size:12px}.guide-dialog{padding:20px}.recipe-meta{flex-wrap:wrap}.store-filter button{min-height:44px}}

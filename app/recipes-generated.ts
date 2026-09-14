@@ -5,8 +5,9 @@ const proteinNames: Record<string, string> = {chicken: 'chicken', tuna: 'tuna', 
 const produceNames: Record<string, string> = {tomato: 'tomato', cucumber: 'cucumber'};
 const accents = ['herb', 'lemon', 'warm', 'garden', 'spiced', 'simple', 'savory', 'bright', 'weekday', 'green'];
 const tools = {
-  pot: [['Stovetop', 'Pot'], ['Microwave']] as string[][],
-  pan: [['Stovetop', 'Pan'], ['Stovetop', 'Pan', 'Cutting board']] as string[][],
+  pot: [['Stovetop', 'Pot', 'Cutting board'], ['Microwave', 'Cutting board']] as string[][],
+  pan: [['Stovetop', 'Pot', 'Pan', 'Cutting board']] as string[][],
+  boiledEggs: [['Stovetop', 'Pot', 'Cutting board']] as string[][],
   board: [['Cutting board']] as string[][],
   none: [] as string[][],
 };
@@ -26,7 +27,7 @@ for (let i = 0; i < 150; i += 1) {
     ingredients,
     steps: protein === 'eggs'
       ? ['Cook the grain until tender according to the packet directions.', 'Wash and chop the vegetables.', 'Cook the eggs until fully set, then serve with the grain and vegetables.']
-      : ['Rinse and cook the grain until tender.', 'Drain the chickpeas and wash the vegetables.', 'Combine everything and season to taste.'],
+      : ['Cook the grain in a pot, or microwave in a suitable bowl, following packet directions.', ...(protein === 'chickpeas' ? ['Drain the cooked chickpeas.'] : []), 'Wash and chop the vegetables.', 'Combine everything and season to taste.'],
     minutes: 10 + (i % 3) * 5,
   });
 }
@@ -41,11 +42,11 @@ for (let i = 0; i < 250; i += 1) {
     id: `generated-main-${i + 1}`,
     name: `${accents[(i + 3) % accents.length]} ${proteinNames[protein]} & ${grainNames[grain]} plate ${String(i + 1).padStart(3, '0')}`,
     slot: 'Main',
-    tools: protein === 'tuna' || protein === 'chickpeas' ? tools.board : tools.pan,
+    tools: protein === 'chicken' || protein === 'eggs' ? tools.pan : tools.pot,
     ingredients,
     steps: protein === 'chicken'
       ? ['Cook the grain in water until tender.', 'Pan-cook the chicken in oil until it reaches 74°C internally.', 'Wash and chop the vegetables, then serve everything together.']
-      : ['Cook the grain according to the packet directions.', 'Drain or rinse the protein as needed.', 'Wash, chop and combine the vegetables with the grain and oil.'],
+      : ['Cook the grain in a pot, or microwave in a suitable bowl, following packet directions.', protein === 'eggs' ? 'Pan-cook the eggs until fully set.' : protein === 'lentils' ? 'Rinse the dry lentils and cook in water until tender, following packet directions.' : 'Drain the cooked chickpeas or canned tuna.', 'Wash and chop the vegetables, then combine with the cooked grain, protein and oil.'],
     minutes: 12 + (i % 4) * 6,
   });
 }
@@ -58,7 +59,7 @@ for (let i = 0; i < 100; i += 1) {
     id: `generated-snack-${i + 1}`,
     name: `${accents[(i + 5) % accents.length]} ${proteinNames[protein]} & ${produceNames[veg]} snack ${String(i + 1).padStart(3, '0')}`,
     slot: 'Snack',
-    tools: protein === 'eggs' ? tools.pot : tools.board,
+    tools: protein === 'eggs' ? tools.boiledEggs : tools.board,
     ingredients: [[protein, protein === 'eggs' ? 90 : 140], [veg, 100 + (i % 3) * 20]],
     steps: protein === 'eggs'
       ? ['Boil the eggs until fully set, then cool and peel.', 'Wash and slice the vegetables.', 'Serve together with a pinch of seasoning.']
